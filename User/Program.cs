@@ -1,5 +1,6 @@
 using User.Application;
 using User.Database;
+using User.Messaging;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +16,7 @@ builder.Services.AddApplication();
 builder.Services.AddDatabase();
 
 // Messaging layer
+builder.Services.AddMessaging();
 
 var app = builder.Build();
 

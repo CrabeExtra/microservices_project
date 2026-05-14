@@ -1,0 +1,24 @@
+# Procedural documentation
+
+I'm just going to discuss here as I write, so nothing super fleshed out regarding documentation.
+
+## System design
+
+So this project will feature a microservices design. I will have a React frontend, and a set of .NET core microservices that will communicate via Jetstream/NATS for speed and efficiency.
+
+I am planning on using Caddy for the edge API layer and reverse proxying. I will likely deploy using custom scripts and add extra scripts as required.
+
+This is not flat DDD nor service oriented architecture. While I understand that employing rigid definitions has its strengths, there are more than 10 ways to skin a cat and I don't have OCD.
+
+Each microservice will consist of 5 distinct layers named and written to be self-explanatory:
+
+- Api - The controller layer. This will contain all endpoints within the microservice. The intention is to keep this light, just data type mapping and response code error handling.
+- Service - The service layer. This contains all of the basic logic a scoped API requires. Generally there is 1 public service function per API endpoint.
+- Domain - The domain layer. This alleviates the bloat often seen in the service layer as an overgeneralised business logic layer. It contains rules and logic specific to entities managed by this microservice.
+- Database - The database layer. This handles database entities, connections, constraints and functions that query the database directly.
+- Messaging - The communication layer. This handles inter-microservice communication. If data is required at any point from anther microservice, here is the logic for obtaining that data.
+
+Zooming out to the wider architecture again:
+
+[Frontend] <--websockets | HTTP--> [Caddy] <-- Proxy --> [ [Microservices 1] <-- NATS/Jetstream --> ... [Microservice n] ] 
+

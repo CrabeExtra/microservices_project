@@ -1,5 +1,5 @@
 # Procedural documentation
-
+### Last updated 15/05/2026
 I'm just going to discuss here as I write, so nothing super fleshed out regarding documentation.
 
 ## System design
@@ -22,3 +22,7 @@ Zooming out to the wider architecture again:
 
 [Frontend] <--websockets | HTTP--> [Caddy] <-- Proxy --> [ [Microservices 1] <-- NATS/Jetstream --> ... [Microservice n] ] 
 
+### Scratch notes
+
+- It seems inefficient to have to export every service, repository, domain and message class explicitly to the DI system via Program.cs, just note to self to create something that iterates through and automatically adds all of these on program start.
+- Still have to write launch scripts, I'll have to ensure to include a linux nats-server with the repo as well and add that.

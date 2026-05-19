@@ -8,7 +8,7 @@ using Identity.Domain;
 var builder = WebApplication.CreateBuilder(args);
 
 // API layer
-builder.Services.AddOpenApi();
+
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
@@ -19,7 +19,7 @@ builder.Services.AddApplication();
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? "";
 builder.Services.AddDatabase(connectionString);
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlite("Data Source=app.db"));
+    options.UseSqlite("Data Source=identity.db"));
 
 // Messaging layer
 builder.Services.AddMessaging();
@@ -27,15 +27,14 @@ builder.Services.AddMessaging();
 // Domain layer
 builder.Services.AddDomain();
 
-
 var app = builder.Build();
 
 // middlewares
 if(app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    app.MapOpenApi();
 }
+app.UseMiddleware<ExceptionMiddleware>();
 
 
 app.UseHttpsRedirection();

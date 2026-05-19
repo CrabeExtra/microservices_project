@@ -22,6 +22,31 @@ Zooming out to the wider architecture again:
 
 [Frontend] <--websockets | HTTP--> [Caddy] <-- Proxy --> [ [Microservices 1] <-- NATS/Jetstream --> ... [Microservice n] ] 
 
+## API Responses and error handling
+
+### Database (Repository): 
+    - Expected errors are logged and then thrown using RepositoryException.
+    - Unknown errors will simply throw.
+
+### Application (Service)
+    - Expected errors are logged and then thrown using ServiceException.
+    - Unknown errors will simply throw.
+
+### Domain
+    - Expected errors will be caught and thrown using DomainException (domain expansion >:).
+    - Unknown errors will simply throw.
+
+### Messaging
+    - Expected errors will be caught and thrown using MessageException.
+    - Unknown errors will simply throw.
+
+### Controller
+    - The controller will catch any unexpected error and throw a 500 with a neat error response.
+    - Known custom generic exceptions will have their message sent to the client along with a 400.
+
+Any other new custom exceptions can be added later on as required.
+
+
 ### Scratch notes
 
 - It seems inefficient to have to export every service, repository, domain and message class explicitly to the DI system via Program.cs, just note to self to create something that iterates through and automatically adds all of these on program start.

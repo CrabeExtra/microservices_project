@@ -1,7 +1,7 @@
-using User.Application.Service;
-using User.Application.Service.Interface;
+using Identity.Application.Service;
+using Identity.Application.Service.Interface;
 
-namespace User.Application;
+namespace Identity.Application;
 
 public static class ApplicationCollectionExtensions
 {

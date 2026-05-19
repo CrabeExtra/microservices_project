@@ -19,7 +19,7 @@ builder.Services.AddApplication();
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? "";
 builder.Services.AddDatabase(connectionString);
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlite("Data Source=app.db"));
+    options.UseSqlite("Data Source=activity.db"));
 
 // Messaging layer
 builder.Services.AddMessaging();

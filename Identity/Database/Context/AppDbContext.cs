@@ -10,5 +10,5 @@ public class AppDbContext : DbContext
     {
     }
 
-    public DbSet<Users> Users { get; set; }
+    public DbSet<UserEntity> Users { get; set; }
 }

@@ -8,7 +8,7 @@ public static class DatabaseCollectionExtensions
 {
     public static IServiceCollection AddDatabase(this IServiceCollection services, string connectionString)
     {
-        services.AddScoped<IUserRepository, UserRepository>(provider => new UserRepository(connectionString));
+        services.AddScoped<IUserRepository, UserRepository>();
         return services;
     }
 }

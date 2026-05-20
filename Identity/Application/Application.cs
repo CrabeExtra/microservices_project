@@ -7,8 +7,15 @@ public static class ApplicationCollectionExtensions
 {
     public static IServiceCollection AddApplication(this IServiceCollection services)
     {
-        services.AddScoped<IUserService, UserService>();
+        // program scoped services
+        services.AddSingleton<IJwtSigningKeyService,JwtSigningKeyService>();
+        services.AddSingleton<ITokenService, TokenService>();
+        services.AddSingleton<IHashService, HashService>();
 
+        // request scoped services
+        services.AddScoped<IUserService, UserService>();
+        
+        
         return services;
     }
 }

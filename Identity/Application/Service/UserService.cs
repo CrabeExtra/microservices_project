@@ -5,17 +5,19 @@ using Identity.Database.Repository.Interface;
 namespace Identity.Application.Service;
 
 public class UserService(
-    IUserRepository userRepository
+    IUserRepository userRepository,
+    IHashService hashService
 ) : IUserService
 {
     public async Task<Guid> CreateUser(CreateUserDto userDto, CancellationToken ct = default) {
         var user = new UserEntity
         {
             Username = userDto.Username,
-            Email = userDto.Email
+            Email = userDto.Email,
+            PasswordHash = hashService.Hash(userDto.Password)
         };
 
-        var userId = await userRepository.CreateUserAsync(user, ct);
+        var userId = await userRepository.CreateUser(user, ct);
 
         return userId;
     }

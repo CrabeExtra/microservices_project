@@ -1,6 +1,6 @@
 using Identity.Application.Service.Interface;
-using Identity.Database.Entity;
 using Identity.Database.Repository.Interface;
+using Identity.Domain.Entity;
 
 namespace Identity.Application.Service;
 
@@ -9,16 +9,8 @@ public class UserService(
     IHashService hashService
 ) : IUserService
 {
-    public async Task<Guid> CreateUser(CreateUserDto userDto, CancellationToken ct = default) {
-        var user = new UserEntity
-        {
-            Username = userDto.Username,
-            Email = userDto.Email,
-            PasswordHash = hashService.Hash(userDto.Password)
-        };
 
-        var userId = await userRepository.CreateUser(user, ct);
-
-        return userId;
-    }
+    public async Task<User?> GetUser(Guid id, CancellationToken ct) 
+        => await userRepository.GetById(id, ct);
+   
 }

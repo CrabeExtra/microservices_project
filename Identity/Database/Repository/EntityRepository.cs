@@ -11,42 +11,42 @@ public class EntityRepository<T>(AppDbContext db)
     : IEntityRepository<T>
     where T : class
 {
-    public async Task<T?> GetById(Guid id) => await db.Set<T>().FindAsync(id);
+    public virtual async Task<T?> GetEntityById(Guid id, CancellationToken ct = default) => await db.Set<T>().FindAsync(id, ct);
     
-    public async Task<T?> GetByField(string fieldName, string value) =>
+    public virtual async Task<T?> GetEntityByField(string fieldName, string value, CancellationToken ct = default) =>
         await db.Set<T>()
             .FirstOrDefaultAsync(e =>
-                EF.Property<string>(e, fieldName) == value);
+                EF.Property<string>(e, fieldName) == value, ct);
 
-    public async Task<List<T>> GetPagedAsync(int offset, int limit)
+    public virtual async Task<List<T>> GetEntityPagedAsync(int offset, int limit, CancellationToken ct = default)
     {
         return await db.Set<T>()
             .Skip(offset)
             .Take(limit)
-            .ToListAsync();
+            .ToListAsync(ct);
     }
 
-    public async Task Create(T entity)
+    public virtual async Task CreateEntity(T entity, CancellationToken ct = default)
     {
         await db.Set<T>().AddAsync(entity);
-        await db.SaveChangesAsync();
+        await db.SaveChangesAsync(ct);
     }
 
-    public async Task Update(T entity)
+    public virtual async Task UpdateEntity(T entity, CancellationToken ct = default)
     {
         db.Set<T>().Update(entity);
-        await db.SaveChangesAsync();
+        await db.SaveChangesAsync(ct);
     }
 
-    public async Task DeleteById(Guid id)
+    public virtual async Task DeleteEntityById(Guid id, CancellationToken ct = default)
     {
-        var entity = await db.Set<T>().FindAsync(id);
+        var entity = await db.Set<T>().FindAsync(id, ct);
 
         if (entity == null)
             return;
 
         db.Set<T>().Remove(entity);
-        await db.SaveChangesAsync();
+        await db.SaveChangesAsync(ct);
     }
     
 }

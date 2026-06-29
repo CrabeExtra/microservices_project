@@ -1,9 +1,8 @@
 using Identity.Application.Service.Interface;
 using System.IdentityModel.Tokens.Jwt;
-using Identity.Database.Entity;
 using System.Security.Claims;
-using Identity.Application.Exceptions;
 using Microsoft.IdentityModel.Tokens;
+using Identity.Domain.Entity;
 
 namespace Identity.Application.Service;
 
@@ -34,7 +33,7 @@ public class TokenService : ITokenService
             throw new InvalidOperationException("Invalid Jwt:ExpiresHours");
     }
 
-    public string CreateToken(UserEntity user, IEnumerable<string>? roles = null)
+    public string CreateToken(User user, IEnumerable<string>? roles = null)
     {
         var claims = new List<Claim>
         {

@@ -2,6 +2,7 @@ using Identity.Application.Exceptions;
 using Identity.Database.Exceptions;
 using Identity.Domain.Exceptions;
 using Identity.Messaging.Exceptions;
+using SQLitePCL;
 
 public class ErrorResponse
 {
@@ -52,8 +53,9 @@ public class ExceptionMiddleware
         {
             await WriteError(context, 400, ex.Message);
         }
-        catch (Exception)
+        catch (Exception ex)
         {
+            Console.WriteLine(ex);
             await WriteError(context, 500, "An unexpected error occurred");
         }
     }

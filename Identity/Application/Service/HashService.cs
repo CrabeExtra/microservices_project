@@ -1,10 +1,12 @@
 using Identity.Application.Service.Interface;
+using Identity.Domain.Entity;
 using Microsoft.AspNetCore.Identity;
 
 // Apparently Argon2id is pretty strong, but it would take a few extra minutes and this is a hobby project.
 namespace Identity.Application.Service
 {
-    public class HashService(PasswordHasher<string> hasher) : IHashService
+    // decided to not use the userManager here. Unnecessary atm.
+    public class HashService(IPasswordHasher<User> hasher) : IHashService
     {
 
         public string Hash(string str)

@@ -1,4 +1,5 @@
-using Identity.Database.Entity;
+
+using Identity.Domain.Entity;
 
 namespace Identity.Application.Service.Interface;
 
@@ -7,5 +8,5 @@ namespace Identity.Application.Service.Interface;
 /// </summary>
 public interface ITokenService
 {
-    string CreateToken(UserEntity user, IEnumerable<string>? roles = null);
+    string CreateToken(User user, IEnumerable<string>? roles = null);
 }

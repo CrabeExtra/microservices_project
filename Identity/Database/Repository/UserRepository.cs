@@ -31,7 +31,7 @@ public class UserRepository(
             Email = user.Email,
             EmailVerified = user.EmailVerified,
             PasswordSet = user.PasswordSet,
-            Roles = user.UserRoles.Select(ur => ur.Role.Name).ToList()
+            Roles = user.UserRoles?.Select(ur => ur.Role.Name).ToList() ?? []
         };
     }
 
@@ -81,7 +81,7 @@ public class UserRepository(
         if(user == null)
             return [];
         
-        return [.. user.UserRoles.Select(ur => ur.Role.Name)];
+        return [.. user.UserRoles?.Select(ur => ur.Role.Name) ?? []];
     }
 
     public async Task<string?> GetPasswordHash(Guid id, CancellationToken ct) => (await db.Users.FindAsync(id, ct))?.PasswordHash;

@@ -16,7 +16,6 @@ public class UserController(
     [HttpPost("signup")]
     public async Task<IActionResult> SignUp([FromBody] CreateUserDto dto, CancellationToken ct)
     {
-        Console.WriteLine("here");
         var userId = await authService.SignUp(dto, ct);
 
         return CreatedAtAction(
@@ -37,7 +36,6 @@ public class UserController(
     [HttpGet("{id:guid}")]
     public async Task<IActionResult> GetUserById(Guid id, CancellationToken ct)
     {
-        Console.WriteLine("here");
         var user = await userService.GetUser(id, ct)
             ?? throw new ServiceException($"User does not exist with ID {id}");
 

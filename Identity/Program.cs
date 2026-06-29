@@ -57,6 +57,9 @@ if(app.Environment.IsDevelopment())
 }
 app.UseMiddleware<ExceptionMiddleware>();
 
+//env
+DotNetEnv.Env.Load();
+
 
 app.UseHttpsRedirection();
 

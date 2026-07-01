@@ -2,6 +2,7 @@ using Identity.Application;
 using Identity.Database;
 using Identity.Database.Context;
 using Identity.Messaging;
+using Identity.Api.Middleware;
 using Microsoft.EntityFrameworkCore;
 using Identity.Domain;
 using Microsoft.AspNetCore.Authentication.JwtBearer;

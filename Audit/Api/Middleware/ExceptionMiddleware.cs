@@ -1,10 +1,10 @@
-using Identity.Application.Exceptions;
-using Identity.Database.Exceptions;
-using Identity.Domain.Exceptions;
-using Identity.Messaging.Exceptions;
+using Audit.Application.Exceptions;
+using Audit.Database.Exceptions;
+using Audit.Domain.Exceptions;
+using Audit.Messaging.Exceptions;
 using SQLitePCL;
 
-namespace Identity.Api.Middleware;
+namespace Audit.Api.Middleware;
 
 public class ErrorResponse
 {

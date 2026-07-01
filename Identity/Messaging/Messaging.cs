@@ -1,6 +1,7 @@
 
-using Identity.Messaging.Message;
-using Identity.Messaging.Message.Interface;
+using Identity.Messaging.Publish;
+using Identity.Messaging.Publish.Interface;
+using NATS.Net;
 
 namespace Identity.Messaging;
 
@@ -8,7 +9,10 @@ public static class MessagingCollectionExtensions
 {
     public static IServiceCollection AddMessaging(this IServiceCollection services)
     {
-        services.AddScoped<IUserMessage, UserMessage>();
+
+        services.AddSingleton<NatsClient>();
+    
+        services.AddScoped<IUserPublish, UserPublish>();
 
         return services;
     }

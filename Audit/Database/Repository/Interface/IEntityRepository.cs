@@ -1,4 +1,4 @@
-namespace Identity.Database.Repository.Interface;
+namespace Audit.Database.Repository.Interface;
 
 /// <summary>
 /// Generic repository interface for entities. Contains common methods for all repositories.
@@ -22,7 +22,7 @@ public interface IEntityRepository<T>
     /// <param name="fieldName"></param>
     /// <param name="value"></param>
     /// <returns>Entity</returns>
-    Task<T?> GetEntityByField(string fieldName, string value, CancellationToken ct = default);
+    Task<IEnumerable<T>> GetEntityByField(string fieldName, string value, CancellationToken ct = default);
 
     /// <summary>
     /// Gets a paged list of entities. Useful for listing endpoints.

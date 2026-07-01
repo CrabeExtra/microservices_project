@@ -22,6 +22,9 @@ Zooming out to the wider architecture again:
 
 [Frontend] <--websockets | HTTP--> [Caddy] <-- Proxy --> [ [Microservices 1] <-- NATS/Jetstream --> ... [Microservice n] ] 
 
+Messaging I am using NATs, it is event driven and data does not persist. For a system that requires loud errors for the case when an event isn't received properly and follow ups, etc. I would use
+a more reliable system such as JetStream. But for my case, NATs is faster and is fine.
+
 ## API Responses and error handling
 
 ### Database (Repository): 
@@ -52,3 +55,7 @@ Any other new custom exceptions can be added later on as required.
 - It seems inefficient to have to export every service, repository, domain and message class explicitly to the DI system via Program.cs, just note to self to create something that iterates through and automatically adds all of these on program start.
 - Still have to write launch scripts, I'll have to ensure to include a linux nats-server with the repo as well and add that.
 - sign up flow, collect timezone, notification preferences, (receive email notifications, receive bell notifications)
+- I need to add the API level authorization, I have token gen, now I need token validation and to extend that across non-identity microservices.
+
+- I have login flow. For activity I should build out a Notifications entity with CRUD operations. Notifications can have user Guids so they can be fetched by user.
+- I have quickly chucked together the frame for an audit microservice, this will store data changes and operations as event records. 

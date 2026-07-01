@@ -1,8 +1,8 @@
-using Identity.Database.Repository.Interface;
-using Identity.Database.Context;
+using Audit.Database.Repository.Interface;
+using Audit.Database.Context;
 using Microsoft.EntityFrameworkCore;
 
-namespace Identity.Database.Repository;
+namespace Audit.Database.Repository;
 
 /// <summary>
 /// Base repository for all entities. Contains common methods for all repositories.
@@ -13,10 +13,11 @@ public class EntityRepository<T>(AppDbContext db)
 {
     public virtual async Task<T?> GetEntityById(Guid id, CancellationToken ct = default) => await db.Set<T>().FindAsync(id, ct);
     
-    public virtual async Task<T?> GetEntityByField(string fieldName, string value, CancellationToken ct = default) =>
+    public virtual async Task<IEnumerable<T>> GetEntityByField(string fieldName, string value, CancellationToken ct = default) =>
         await db.Set<T>()
-            .FirstOrDefaultAsync(e =>
-                EF.Property<string>(e, fieldName) == value, ct);
+            .Where(e =>
+                EF.Property<string>(e, fieldName) == value)
+            .ToListAsync(ct);
 
     public virtual async Task<List<T>> GetEntityPagedAsync(int offset, int limit, CancellationToken ct = default)
     {

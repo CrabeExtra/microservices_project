@@ -12,6 +12,7 @@ static class AuditSubscriptionConstants
 {
     static public IEnumerable<string> subjects = [
         ">" // this simply subscribes to ALL subjects.
+            // Might change this later so that it subscribes to audit.>
     ];
 }
 

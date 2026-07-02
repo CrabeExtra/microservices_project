@@ -3,12 +3,14 @@ using Identity.Application.Service.Interface;
 using Identity.Domain.Entity;
 using Identity.Database.Repository.Interface;
 using Identity.Application.Exceptions;
-
+using Identity.Messaging.Publish.Interface;
+using Identity.Messaging.Contract;
 namespace Identity.Application.Service;
 public class AuthService(
     IUserRepository userRepository,
     IHashService hashService,
-    ITokenService tokenService
+    ITokenService tokenService,
+    IUserPublish userPublish
 ) : IAuthService {
     
     public async Task<Guid> SignUp(CreateUserDto dto, CancellationToken ct)
@@ -31,6 +33,19 @@ public class AuthService(
 
         // 3. Save
         await userRepository.CreateUser(user, password, ct);
+
+        // 4. publish user created event
+        await userPublish.PublishUserCreatedAsync(new CreateUserEventData
+        {
+            CreatedAt = DateTime.UtcNow,
+            OldData = null,
+            NewData = new { user.Id, user.Username, user.Email }.ToString(),
+            MicroserviceName = "Identity",
+            EntityName = "User",
+            Action = "Created",
+            EventType = "user.created",
+            ReferenceId = user.Id
+        }, ct);
 
         return user.Id;
     }

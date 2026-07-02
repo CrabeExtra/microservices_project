@@ -11,9 +11,7 @@ namespace Audit.Messaging.Subscribe;
 static class AuditSubscriptionConstants
 {
     static public IEnumerable<string> subjects = [
-        "user.created",
-        "user.updated", // need to change this to just '>' so that audits capture all events and log. This is just to demonstrate how it works for when I implement to Activity and build other microservices.
-        "user.deleted"
+        ">" // this simply subscribes to ALL subjects.
     ];
 }
 

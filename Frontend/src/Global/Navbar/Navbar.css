@@ -1,0 +1,10 @@
+
+
+a {
+    color: var(--colour-text) !important;
+}
+
+.navbar-container {
+    border: 1px solid var(--colour-highlight);
+    border-width: 0px 0px 1px 0px;
+}

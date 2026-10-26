@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+:root {
+
+  --colour-prim: #F2F0EA;
+  --colour-sec: #BBBDBD;
+  --colour-background: #000;
+  --colour-surface: #222;
+  --colour-surface-2: #333;
+
+  --colour-text: #00FF41;
+  --colour-text-muted: #00FF8B;
+
+  --colour-highlight: var(--colour-text);
+
+  --bs-primary: var(--colour-surface-2);
+  --bs-body-bg: var(--colour-background);
+  --bs-body-color: var(--colour-text);
+}
+
+body {
+  font-family: 'VT323', monospace;
+  color: var(--colour-text);
+  background: var(--colour-background);
+}
+
+h1 {
+  font-size: 150px;
+}

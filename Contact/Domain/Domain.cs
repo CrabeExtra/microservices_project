@@ -1,5 +1,5 @@
 
-namespace Audit.Domain;
+namespace Contact.Domain;
 
 public static class ApplicationCollectionExtensions
 {

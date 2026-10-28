@@ -1,4 +1,4 @@
-namespace Audit.Database.Exceptions;
+namespace Contact.Database.Exceptions;
 
 public class RepositoryException : Exception
 {

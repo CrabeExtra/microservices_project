@@ -1,5 +1,5 @@
 
-namespace Audit.Messaging.Contract;
+namespace Contact.Messaging.Contract;
 
 public class BaseEventData
 {

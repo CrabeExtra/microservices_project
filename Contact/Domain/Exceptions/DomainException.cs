@@ -1,4 +1,4 @@
-namespace Audit.Domain.Exceptions;
+namespace Contact.Domain.Exceptions;
 
 public class DomainException : Exception
 {

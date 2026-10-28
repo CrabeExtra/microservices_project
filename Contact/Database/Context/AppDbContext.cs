@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace Audit.Database.Context;
+namespace Contact.Database.Context;
 
 public class AppDbContext : DbContext
 {

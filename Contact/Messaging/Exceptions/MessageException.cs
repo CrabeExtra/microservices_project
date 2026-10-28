@@ -1,4 +1,4 @@
-namespace Audit.Messaging.Exceptions;
+namespace Contact.Messaging.Exceptions;
 
 public class MessageException : Exception
 {

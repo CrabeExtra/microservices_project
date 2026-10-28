@@ -1,8 +1,8 @@
-using Audit.Database.Repository.Interface;
-using Audit.Database.Context;
+using Contact.Database.Repository.Interface;
+using Contact.Database.Context;
 using Microsoft.EntityFrameworkCore;
 
-namespace Audit.Database.Repository;
+namespace Contact.Database.Repository;
 
 /// <summary>
 /// Base repository for all entities. Contains common methods for all repositories.

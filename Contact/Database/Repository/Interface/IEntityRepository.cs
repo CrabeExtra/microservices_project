@@ -1,4 +1,4 @@
-namespace Audit.Database.Repository.Interface;
+namespace Contact.Database.Repository.Interface;
 
 /// <summary>
 /// Generic repository interface for entities. Contains common methods for all repositories.

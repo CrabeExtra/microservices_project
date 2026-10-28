@@ -1,10 +1,10 @@
-using Audit.Application.Exceptions;
-using Audit.Database.Exceptions;
-using Audit.Domain.Exceptions;
-using Audit.Messaging.Exceptions;
+using Contact.Application.Exceptions;
+using Contact.Database.Exceptions;
+using Contact.Domain.Exceptions;
+using Contact.Messaging.Exceptions;
 using SQLitePCL;
 
-namespace Audit.Api.Middleware;
+namespace Contact.Api.Middleware;
 
 public class ErrorResponse
 {

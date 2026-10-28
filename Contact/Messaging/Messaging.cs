@@ -1,7 +1,7 @@
 
 using NATS.Net;
 
-namespace Audit.Messaging;
+namespace Contact.Messaging;
 
 public static class MessagingCollectionExtensions
 {

@@ -11,4 +11,21 @@
   flex-direction: row;
   margin: 0;
   padding: 0;
+  --bs-gutter-x: 0;
+  --bs-gutter-y: 0;
+}
+
+.btn, .btn:disabled {
+  background-color: var(--colour-surface-2);
+  border: none;
+  color: var(--colour-prim);
+  border-radius: 3px;
+  width: 150px;
+  min-width: fit-content;
+  height: 40px;
+  min-height: fit-content;
+}
+
+.btn:hover {
+  background-color: var(--colour-surface);
 }

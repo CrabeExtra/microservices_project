@@ -1,12 +1,15 @@
-using Audit.Application;
-using Audit.Database;
-using Audit.Database.Context;
-using Audit.Messaging;
-using Audit.Api.Middleware;
+using Contact.Application;
+using Contact.Database;
+using Contact.Database.Context;
+using Contact.Messaging;
+using Contact.Api.Middleware;
 using Microsoft.EntityFrameworkCore;
-using Audit.Domain;
+using Contact.Domain;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// TODO: Properly manage cors origins before deployment.
+builder.Services.AddCors(options => options.AddPolicy("AllowAll", policy => policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()));
 
 // API layer
 
@@ -31,7 +34,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddMessaging();
 
 // Domain layer
-builder.Services.AddDomain();
+//builder.Services.AddDomain();
 
 var app = builder.Build();
 

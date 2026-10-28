@@ -1,20 +1,24 @@
 
 
-using Audit.Application.Service;
-using Audit.Application.Service.Interface;
 
-namespace Audit.Application;
+using Contact.Application.Service;
+using Contact.Application.Service.Interface;
+
+namespace Contact.Application;
 
 public static class ApplicationCollectionExtensions
 {
     public static IServiceCollection AddApplication(this IServiceCollection services)
     {
         // program scoped services
-        //services.AddSingleton<IJwtSigningKeyService, JwtSigningKeyService>();
+        services.AddSingleton<IApiService, ApiService>();
 
         // request scoped services
-        services.AddScoped<IRecordService, RecordService>();
+        services.AddScoped<IInteractionService, InteractionService>();
 
+        // extras
+        services.AddHttpClient<ApiService>();
+    
         return services;
     }
 }

@@ -21,6 +21,11 @@ jobs:
       - name: Provision server
         run: sudo bash ./scripts/provision.sh
 
+      - name: Validate and reload Caddy
+        run: |
+          sudo caddy validate --config /etc/caddy/Caddyfile
+          sudo systemctl reload caddy
+
       - name: Build frontend
         working-directory: ./Frontend
         run: |

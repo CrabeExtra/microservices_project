@@ -34,14 +34,17 @@ jobs:
       - name: Deploy frontend
         continue-on-error: true
         run: |
-          mkdir -p /Deployments/Portfolio/Frontend
-          rm -rf ~/Deployments/Portfolio/Frontend/*
-          cp -a ./Frontend/dist/. ~/Projects/Portfolio/Frontend/
+          DEST="/deployments/Portfolio/Frontend"
+
+          mkdir -p "$DEST"
+          rm -rf "$DEST"/*
+          cp -a ./Frontend/dist/. "$DEST/"
 
       - name: Configure frontend permissions
         run: |
-          sudo chgrp caddy /Deployments/Jude /Deployments/Jude/Projects /Deployments/Jude/Projects/Portfolio
-          sudo chmod 710 /Deployments/Jude /Deployments/Jude/Projects /Deployments/Jude/Projects/Portfolio
+          sudo chgrp caddy /deployments /deployments/Portfolio
+          sudo chmod 711 /deployments
+          sudo chmod 710 /deployments/Portfolio
 
-          sudo chgrp -R caddy /Deployments/Jude/Projects/Portfolio/Frontend
-          sudo chmod -R g+rX /Deployments/Jude/Projects/Portfolio/Frontend
+          sudo chgrp -R caddy /deployments/Portfolio/Frontend
+          sudo chmod -R g+rX /deployments/Portfolio/Frontend

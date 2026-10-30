@@ -5,6 +5,7 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/deployment-config.sh"
 
 echo "Installing dependencies..."
+
 pacman -S --needed --noconfirm \
     dotnet-sdk \
     aspnet-runtime \
@@ -22,6 +23,11 @@ echo "Creating deployment directory..."
 mkdir -p "$DEPLOY_DIR"
 
 chown -R "$DEPLOY_USER:$DEPLOY_USER" "$DEPLOY_DIR"
+
+mkdir -p "$DEPLOY_DIR/Frontend"
+
+sudo chgrp -R caddy "$DEPLOY_DIR/Frontend"
+sudo chmod -R g+rX "$DEPLOY_DIR/Frontend"
 
 echo "Creating systemd services..."
 
@@ -59,7 +65,7 @@ mkdir -p /etc/caddy
 {
     cat <<EOF
 judebradbury.com {
-    root * /Deployments/Jude/Projects/Portfolio/Frontend
+    root * /deployments/Portfolio/Frontend
     encode zstd gzip
 
 EOF
@@ -89,13 +95,14 @@ caddy validate --config /etc/caddy/Caddyfile
 
 echo "Configuring Caddy filesystem permissions..."
 
-# Allow Caddy to traverse the parent directories, but not list their contents.
-chgrp caddy /Deployments/Jude /Deployments/Jude/Projects
-chmod 710 /Deployments/Jude /Deployments/Jude/Projects
+chgrp caddy /deployments
+chmod 711 /deployments
 
-# Give Caddy read access to the project.
-chgrp -R caddy /Deployments/Jude/Projects/Portfolio
-chmod -R g+rX /Deployments/Jude/Projects/Portfolio
+chgrp caddy "$DEPLOY_DIR"
+chmod 710 "$DEPLOY_DIR"
+
+chgrp -R caddy "$DEPLOY_DIR/Frontend"
+chmod -R g+rX "$DEPLOY_DIR/Frontend"
 
 echo "Creating NATS service..."
 
@@ -123,6 +130,5 @@ done
 
 systemctl enable "${SERVICE_NAMES[@]}"
 systemctl enable --now nats.service caddy.service
-systemctl enable --now caddy
 
 echo "Provisioning complete."

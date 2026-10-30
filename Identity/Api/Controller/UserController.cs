@@ -11,7 +11,7 @@ namespace Identity.Api.Controller;
 public class UserController(
     IUserService userService,
     IAuthService authService
-) : ControllerBase
+) : BaseController
 {
     [HttpPost("signup")]
     public async Task<IActionResult> SignUp([FromBody] CreateUserDto dto, CancellationToken ct)

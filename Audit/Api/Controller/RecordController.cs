@@ -11,7 +11,7 @@ namespace Audit.Api.Controller;
 [Route("api/record")]
 public class RecordController(
     IRecordService recordService
-) : ControllerBase
+) : BaseController
 {
 
     [HttpPost]

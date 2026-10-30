@@ -9,7 +9,7 @@ namespace Contact.Api.Controller;
 [Route("api/interaction")]
 public class RecordController(
     IInteractionService interactionService
-) : ControllerBase
+) : BaseController
 {
 
     [HttpPost]

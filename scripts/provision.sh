@@ -59,7 +59,7 @@ mkdir -p /etc/caddy
 {
     cat <<EOF
 judebradbury.com {
-    root * /home/Jude/Projects/Portfolio/Frontend
+    root * /Deployments/Jude/Projects/Portfolio/Frontend
     encode zstd gzip
 
 EOF
@@ -90,12 +90,12 @@ caddy validate --config /etc/caddy/Caddyfile
 echo "Configuring Caddy filesystem permissions..."
 
 # Allow Caddy to traverse the parent directories, but not list their contents.
-chgrp caddy /home/Jude /home/Jude/Projects
-chmod 710 /home/Jude /home/Jude/Projects
+chgrp caddy /Deployments/Jude /Deployments/Jude/Projects
+chmod 710 /Deployments/Jude /Deployments/Jude/Projects
 
 # Give Caddy read access to the project.
-chgrp -R caddy /home/Jude/Projects/Portfolio
-chmod -R g+rX /home/Jude/Projects/Portfolio
+chgrp -R caddy /Deployments/Jude/Projects/Portfolio
+chmod -R g+rX /Deployments/Jude/Projects/Portfolio
 
 echo "Creating NATS service..."
 

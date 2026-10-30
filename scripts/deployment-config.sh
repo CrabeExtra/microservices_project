@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DEPLOY_DIR="/home/Jude/Projects/Portfolio"
+DEPLOY_DIR="/Deployments/Jude/Projects/Portfolio"
 DEPLOY_USER="Jude"
 
 # Add new services, comment out stale services or remove old services from the deployment pipeline here.

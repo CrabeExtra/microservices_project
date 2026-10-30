@@ -3,7 +3,7 @@ using Microsoft.Data.Sqlite;
 
 namespace Activity.Database.Repository;
 
-public class UserRepository(string connectionString) : IUserRepository
+public class NotificationRepository(string connectionString) : INotificationRepository
 {
     public int CreateUser(string username, string email, string passwordHash)
     {

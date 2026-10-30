@@ -30,14 +30,6 @@ builder.Services.AddDomain();
 
 var app = builder.Build();
 
-// middlewares
-if(app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-
-
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

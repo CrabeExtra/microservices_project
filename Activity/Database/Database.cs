@@ -1,14 +1,14 @@
 
-using Identity.Database.Repository.Interface;
-using Identity.Database.Repository;
+using Activity.Database.Repository.Interface;
+using Activity.Database.Repository;
 
-namespace Identity.Database;
+namespace Activity.Database;
 
 public static class DatabaseCollectionExtensions
 {
     public static IServiceCollection AddDatabase(this IServiceCollection services, string connectionString)
     {
-        services.AddScoped<IUserRepository, UserRepository>(provider => new UserRepository(connectionString));
+        services.AddScoped<INotificationRepository, NotificationRepository>(provider => new NotificationRepository(connectionString));
         return services;
     }
 }

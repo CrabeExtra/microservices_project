@@ -8,7 +8,7 @@ public static class MessagingCollectionExtensions
 {
     public static IServiceCollection AddMessaging(this IServiceCollection services)
     {
-        services.AddScoped<IUserMessage, UserMessage>();
+        services.AddScoped<INotificationMessage, NotificationMessage>();
 
         return services;
     }

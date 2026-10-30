@@ -42,9 +42,9 @@ jobs:
 
       - name: Configure frontend permissions
         run: |
-          sudo chgrp caddy /deployments /deployments/Portfolio
-          sudo chmod 711 /deployments
-          sudo chmod 710 /deployments/Portfolio
+          sudo chown -R Jude:Jude /deployments/Portfolio
+          sudo chmod 755 /deployments
+          sudo chmod 755 /deployments/Portfolio
 
           sudo chgrp -R caddy /deployments/Portfolio/Frontend
-          sudo chmod -R g+rX /deployments/Portfolio/Frontend
+          sudo chmod -R 755 /deployments/Portfolio/Frontend

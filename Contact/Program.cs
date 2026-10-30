@@ -11,7 +11,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddCors(options => options.AddPolicy("AllowSpecificOrigins", policy =>
     policy.WithOrigins(
         "https://judebradbury.com",
-        "https://www.judebradbury.com"
+        "https://www.judebradbury.com",
+        "http://localhost:3001"
     )
     .AllowAnyMethod()
     .AllowAnyHeader()
@@ -56,6 +57,8 @@ app.UseMiddleware<ExceptionMiddleware>();
 DotNetEnv.Env.Load();
 
 app.UseHttpsRedirection();
+
+app.UseCors("AllowSpecificOrigins");
 
 app.UseAuthorization();
 

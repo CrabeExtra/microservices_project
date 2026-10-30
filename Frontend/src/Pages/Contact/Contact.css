@@ -2,3 +2,18 @@
 .contact-row {
     height: calc(100vh - 57px);
 }
+
+.copy-popup {
+    position: fixed;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.1s ease;
+}
+
+.copy-hover:hover ~ .copy-popup {
+    opacity: 1;
+}
+
+.copy-hover:hover {
+    cursor: pointer;
+}

@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "moduleResolution": "bundler",
+    "paths": {
+      "@/*": ["./*"],
+      "Global": ["src/Global/index.js"],
+      "Global/*": ["src/Global/*"],
+      "Pages": ["src/Pages/index.js"],
+      "Pages/*": ["src/Pages/*"]
+    }
+  },
+  "include": ["src"]
+}

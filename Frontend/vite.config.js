@@ -14,6 +14,8 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': projectRoot,
+      'Global': `${projectRoot}/src/Global`,
+      'Pages': `${projectRoot}/src/Pages`
     },
   },
 });

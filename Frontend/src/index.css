@@ -9,6 +9,7 @@
 
   --colour-text: #00FF41;
   --colour-text-muted: #00FF41A0;
+  --colour-error: #FF0030;
 
   --colour-highlight: var(--colour-text);
 

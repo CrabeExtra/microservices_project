@@ -7,6 +7,16 @@ using Activity.Domain;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddCors(options => options.AddPolicy("AllowSpecificOrigins", policy =>
+    policy.WithOrigins(
+        "https://judebradbury.com",
+        "https://www.judebradbury.com",
+        "http://localhost:3001"
+    )
+    .AllowAnyMethod()
+    .AllowAnyHeader()
+));
+
 // API layer
 builder.Services.AddOpenApi();
 builder.Services.AddControllers();
@@ -31,6 +41,8 @@ builder.Services.AddDomain();
 var app = builder.Build();
 
 app.UseHttpsRedirection();
+
+app.UseCors("AllowSpecificOrigins");
 
 app.UseAuthorization();
 

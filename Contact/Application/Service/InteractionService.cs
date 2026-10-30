@@ -18,6 +18,7 @@ public class InteractionService(
 
         // Using resend. Seems to work fine, has its own rate limiting. Later on I might host an SMTP server. Google's gmail API is absolute shit.
         IResend resend = ResendClient.Create(Env.GetString("RESEND_API"));
+        
         // first, send myself the notification.
         var resp = await resend.EmailSendAsync( new EmailMessage()
         {

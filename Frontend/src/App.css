@@ -13,6 +13,7 @@
   padding: 0;
   --bs-gutter-x: 0;
   --bs-gutter-y: 0;
+  width: 100%;
 }
 
 .btn, .btn:disabled {

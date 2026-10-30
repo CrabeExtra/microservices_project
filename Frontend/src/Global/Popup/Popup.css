@@ -1,0 +1,25 @@
+.toast-header {
+    background-color: var(--colour-surface);
+    color: var(--colour-prim);
+    font-size: 20px;
+    border-radius: 10px 10px 0 0;
+}
+
+.toast.error {
+    border: 2px solid var(--colour-error) !important;
+    border-width: 1px;
+}
+
+.toast-body {
+    background-color: var(--colour-surface-2);
+    border-radius: 0 0 5px 5px;
+}
+
+.toast {
+    background-color: var(--colour-surface);
+    border-radius: 10px;
+}
+
+.success {
+
+}

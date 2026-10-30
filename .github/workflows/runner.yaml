@@ -18,8 +18,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Provision server
+        run: sudo bash ./provision.sh
+
       - name: Build .NET services
         run: |
+          dotnet restore ./Identity/Identity.csproj
           dotnet publish ./Identity/Identity.csproj -c Release -o ./publish/Identity
           dotnet publish ./Activity/Activity.csproj -c Release -o ./publish/Activity
           dotnet publish ./Audit/Audit.csproj -c Release -o ./publish/Audit
@@ -31,21 +35,24 @@ jobs:
           npm ci
           npm run build
 
-      # - name: Stop services
-      #   run: |
-      #     sudo systemctl stop identity activity audit contact frontend
+      - name: Stop existing services
+        run: |
+          sudo systemctl stop identity activity audit contact nats || true
 
-      # - name: Deploy backend
-      #   run: |
-      #     mkdir -p ~/Projects/MyProject
-      #     rsync -av --delete ./publish/ ~/Projects/MyProject/
+      - name: Deploy backend
+        run: |
+          rsync -av --delete ./publish/ ~/Projects/Portfolio/
 
-      # - name: Deploy frontend
-      #   run: |
-      #     mkdir -p ~/Projects/MyProject/Frontend
-      #     rsync -av --delete ./Frontend/dist/ ~/Projects/MyProject/Frontend/
+      - name: Deploy frontend
+        run: |
+          mkdir -p ~/Projects/Portfolio/Frontend
+          rsync -av --delete ./Frontend/dist/ ~/microservices_project/microservices_project/Frontend/
 
-      # - name: Restart services
-      #   if: always()
-      #   run: |
-      #     sudo systemctl start identity activity audit contact frontend
+      - name: Deploy NATS
+        run: |
+          install -m 755 ./nats-server ~/microservices_project/microservices_project/nats-server
+
+      - name: Start services
+        if: always()
+        run: |
+          sudo systemctl start identity activity audit contact nats

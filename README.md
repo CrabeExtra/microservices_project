@@ -1,5 +1,5 @@
 # Procedural documentation
-### Last updated 15/05/2026
+### Last updated 15/05/2026 - Note: 30/10/2026, I am turning this into a portfolio site. Slightly overengineered.
 I'm just going to discuss here as I write, so nothing super fleshed out regarding documentation.
 
 ## System design

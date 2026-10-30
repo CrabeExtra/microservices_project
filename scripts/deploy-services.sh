@@ -69,14 +69,14 @@ for name in "${SERVICES[@]}"; do
     fi
 
     # Restart only this service.
-    if ! sudo systemctl restart "$name"; then
+    if ! sudo systemctl restart "${name,,}"; then
         echo "RESTART FAILED: $name"
 
         # Roll back to the previous deployment.
         rm -rf "$TARGET"
         if [ -d "$BACKUP" ]; then
             mv "$BACKUP" "$TARGET"
-            sudo systemctl restart "$name"
+            sudo systemctl restart "${name,,}"
         fi
 
         FAILED+=("$name")

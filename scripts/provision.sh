@@ -46,10 +46,10 @@ WantedBy=multi-user.target
 EOF
 }
 
-create_dotnet_service identity Identity
-create_dotnet_service activity Activity
-create_dotnet_service audit Audit
-create_dotnet_service contact Contact
+create_dotnet_service Identity Identity
+create_dotnet_service Activity Activity
+create_dotnet_service Audit Audit
+create_dotnet_service Contact Contact
 
 echo "Creating NATS service..."
 

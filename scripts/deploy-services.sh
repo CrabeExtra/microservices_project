@@ -2,7 +2,7 @@
 
 set -u
 
-DEPLOY_DIR="/home/Jude/Projects/MyProject"
+DEPLOY_DIR="/home/Jude/Projects/Portfolio"
 
 # Add or remove services here.
 SERVICES=(

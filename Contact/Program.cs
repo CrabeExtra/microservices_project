@@ -11,7 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddCors(options => options.AddPolicy("AllowSpecificOrigins", policy =>
     policy.WithOrigins(
         "https://judebradbury.com",
-        "http://192.168.4.46:3001"
+        "https://www.judebradbury.com"
     )
     .AllowAnyMethod()
     .AllowAnyHeader()

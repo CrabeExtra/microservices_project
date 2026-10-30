@@ -65,6 +65,10 @@ mkdir -p /etc/caddy
 {
     cat <<EOF
 judebradbury.com {
+    redir https://www.judebradbury.com{uri} permanent
+}
+
+www.judebradbury.com {
     root * /deployments/Portfolio/Frontend
     encode zstd gzip
 

@@ -4,7 +4,6 @@ using Contact.Database.Context;
 using Contact.Messaging;
 using Contact.Api.Middleware;
 using Microsoft.EntityFrameworkCore;
-using Contact.Domain;
 
 var builder = WebApplication.CreateBuilder(args);
 

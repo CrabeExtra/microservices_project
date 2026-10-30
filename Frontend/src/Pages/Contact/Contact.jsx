@@ -32,9 +32,6 @@ export default function Contact() {
         // TODO: Send email and message to your API.
         const response = await jFetch("/contact/interaction", {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
             body: {
                 email: email,
                 body: message.replaceAll("\n", "<p></p>") // preserves newline in the email.

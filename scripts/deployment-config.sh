@@ -7,7 +7,7 @@ DEPLOY_USER="Jude"
 # Services should be .Net web servers with csproj in root/ServiceName.
 DOTNET_SERVICES=(
     "Identity"
-    "Activity"
     "Audit"
+    "Activity"
     "Contact"
 )

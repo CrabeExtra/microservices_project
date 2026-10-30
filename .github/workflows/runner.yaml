@@ -38,6 +38,10 @@ jobs:
           rm -rf ~/Projects/Portfolio/Frontend/*
           cp -a ./Frontend/dist/. ~/Projects/Portfolio/Frontend/
 
-      - name: Deploy NATS
+      - name: Configure frontend permissions
         run: |
-          install -m 755 ./nats-server ~/Projects/Portfolio/nats-server
+          sudo chgrp caddy /home/Jude /home/Jude/Projects /home/Jude/Projects/Portfolio
+          sudo chmod 710 /home/Jude /home/Jude/Projects /home/Jude/Projects/Portfolio
+
+          sudo chgrp -R caddy /home/Jude/Projects/Portfolio/Frontend
+          sudo chmod -R g+rX /home/Jude/Projects/Portfolio/Frontend

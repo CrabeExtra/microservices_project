@@ -10,7 +10,8 @@ pacman -S --needed --noconfirm \
     aspnet-runtime \
     nodejs \
     npm \
-    curl
+    curl \
+    caddy
 
 echo "Installing NATS Server..."
 
@@ -51,6 +52,51 @@ for name in "${DOTNET_SERVICES[@]}"; do
     create_dotnet_service "$name" "$name" "$name"
 done
 
+echo "Configuring Caddy..."
+
+mkdir -p /etc/caddy
+
+{
+    cat <<EOF
+judebradbury.com {
+    root * /home/Jude/Projects/Portfolio/Frontend
+    encode zstd gzip
+
+EOF
+
+    for i in "${!DOTNET_SERVICES[@]}"; do
+        name="${DOTNET_SERVICES[$i]}"
+        port=$((5001 + i))
+
+        cat <<EOF
+    handle /api/${name,,}/* {
+        reverse_proxy 127.0.0.1:${port}
+    }
+
+EOF
+    done
+
+    cat <<EOF
+    handle {
+        try_files {path} /index.html
+        file_server
+    }
+}
+EOF
+} > /etc/caddy/Caddyfile
+
+caddy validate --config /etc/caddy/Caddyfile
+
+echo "Configuring Caddy filesystem permissions..."
+
+# Allow Caddy to traverse the parent directories, but not list their contents.
+chgrp caddy /home/Jude /home/Jude/Projects
+chmod 710 /home/Jude /home/Jude/Projects
+
+# Give Caddy read access to the project.
+chgrp -R caddy /home/Jude/Projects/Portfolio
+chmod -R g+rX /home/Jude/Projects/Portfolio
+
 echo "Creating NATS service..."
 
 cat > /etc/systemd/system/nats.service <<EOF
@@ -61,7 +107,7 @@ After=network.target
 [Service]
 Type=simple
 User=${DEPLOY_USER}
-ExecStart=/usr/bin/nats-server
+ExecStart=/usr/local/bin/nats-server
 Restart=always
 RestartSec=5
 
@@ -75,6 +121,8 @@ for name in "${DOTNET_SERVICES[@]}"; do
     SERVICE_NAMES+=("${name}.service")
 done
 
-systemctl enable --now "${SERVICE_NAMES[@]}" nats.service
+systemctl enable "${SERVICE_NAMES[@]}"
+systemctl enable --now nats.service caddy.service
+systemctl enable --now caddy
 
 echo "Provisioning complete."

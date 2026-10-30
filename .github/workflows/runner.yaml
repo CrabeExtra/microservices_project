@@ -44,7 +44,7 @@ jobs:
 
       - name: Deploy NATS
         run: |
-          install -m 755 ./nats-server ~/microservices_project/microservices_project/nats-server
+          install -m 755 ./nats-server ~/Projects/Portfolio/nats-server
 
       - name: Start services
         if: always()

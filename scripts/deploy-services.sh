@@ -14,7 +14,7 @@ SERVICES=(
 
 FAILED=()
 
-cd "$(dirname "$0")" || exit 1
+cd "$(dirname "$0")/.." || exit 1
 
 for name in "${SERVICES[@]}"; do
     echo ""

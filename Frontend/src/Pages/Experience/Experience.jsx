@@ -4,18 +4,21 @@ import { Row, Col, Card, Modal } from "react-bootstrap";
 import experienceData from "./experience.json";
 import "./Experience.css";
 
+// I coded this with a lot of assistance from AI to speed it up, as a result, the CSS is not very elegant. I might rebuild it later when I have time.
+// For now I have simply re-written and added styling to make it passable.
+
 export default function Experience() {
     const [selectedRole, setSelectedRole] = useState(null);
 
     return (
-        <>
+        <Col className="align-items-center container-col">
             <Row className="justify-content-center">
-                <Col xs={10}>
+                <Col xs={10} style={{ height: "fit-content" }}>
                     <h1>My Experience</h1>
                 </Col>
             </Row>
 
-            <Row className="justify-content-center mt-4">
+            <Row className="justify-content-center mt-4 card-row">
                 <Col xs={10}>
                     <div className="experience-grid">
                         {experienceData.roles.map((role, index) => (
@@ -99,6 +102,6 @@ export default function Experience() {
                     </>
                 )}
             </Modal>
-        </>
+        </Col>
     );
 }

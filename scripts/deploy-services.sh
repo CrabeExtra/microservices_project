@@ -1,22 +1,17 @@
 #!/bin/bash
-
 set -u
 
-DEPLOY_DIR="/home/Jude/Projects/Portfolio"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+REPO_DIR="$(dirname "$SCRIPT_DIR")"
 
-# Add or remove services here.
-SERVICES=(
-    "Identity"
-    "Activity"
-    "Audit"
-    "Contact"
-)
+source "$SCRIPT_DIR/deployment-config.sh"
+
+cd "$REPO_DIR" || exit 1
 
 FAILED=()
 
-cd "$(dirname "$0")/.." || exit 1
+for name in "${DOTNET_SERVICES[@]}"; do
 
-for name in "${SERVICES[@]}"; do
     echo ""
     echo "=================================="
     echo "Deploying $name"
@@ -37,7 +32,7 @@ for name in "${SERVICES[@]}"; do
         continue
     fi
 
-    # Stage the deployment without touching the running service.
+    # Stage deployment.
     rm -rf "$STAGING" "$BACKUP"
     mkdir -p "$STAGING"
 
@@ -48,15 +43,16 @@ for name in "${SERVICES[@]}"; do
         continue
     fi
 
-    # Swap the new deployment into place.
+    # Back up existing deployment.
     if [ -d "$TARGET" ]; then
-        mv "$TARGET" "$BACKUP" || {
+        if ! mv "$TARGET" "$BACKUP"; then
             echo "BACKUP FAILED: $name"
             FAILED+=("$name")
             continue
-        }
+        fi
     fi
 
+    # Activate new deployment.
     if ! mv "$STAGING" "$TARGET"; then
         echo "DEPLOYMENT FAILED: $name"
 
@@ -69,14 +65,14 @@ for name in "${SERVICES[@]}"; do
     fi
 
     # Restart only this service.
-    if ! sudo systemctl restart "${name,,}"; then
+    if ! sudo systemctl restart "${name}.service"; then
         echo "RESTART FAILED: $name"
 
-        # Roll back to the previous deployment.
         rm -rf "$TARGET"
+
         if [ -d "$BACKUP" ]; then
             mv "$BACKUP" "$TARGET"
-            sudo systemctl restart "${name,,}"
+            sudo systemctl restart "${name}.service"
         fi
 
         FAILED+=("$name")

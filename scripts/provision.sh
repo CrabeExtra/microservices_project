@@ -1,16 +1,16 @@
-
 #!/bin/bash
 set -euo pipefail
 
-DEPLOY_DIR="/home/Jude/Projects/Portfolio"
-DEPLOY_USER="Jude"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$SCRIPT_DIR/deployment-config.sh"
 
 echo "Installing dependencies..."
 pacman -S --needed --noconfirm \
     dotnet-sdk \
     aspnet-runtime \
     nodejs \
-    npm 
+    npm \
+    curl
 
 echo "Installing NATS Server..."
 
@@ -26,7 +26,8 @@ echo "Creating systemd services..."
 
 create_dotnet_service() {
     local name="$1"
-    local dll="$2"
+    local directory="$2"
+    local dll="$3"
 
     cat > "/etc/systemd/system/${name}.service" <<EOF
 [Unit]
@@ -36,8 +37,8 @@ After=network.target
 [Service]
 Type=simple
 User=${DEPLOY_USER}
-WorkingDirectory=${DEPLOY_DIR}/${name}
-ExecStart=/usr/bin/dotnet ${DEPLOY_DIR}/${name}/${dll}.dll
+WorkingDirectory=${DEPLOY_DIR}/${directory}
+ExecStart=/usr/bin/dotnet ${DEPLOY_DIR}/${directory}/${dll}.dll
 Restart=always
 RestartSec=5
 
@@ -46,10 +47,9 @@ WantedBy=multi-user.target
 EOF
 }
 
-create_dotnet_service Identity Identity
-create_dotnet_service Activity Activity
-create_dotnet_service Audit Audit
-create_dotnet_service Contact Contact
+for name in "${DOTNET_SERVICES[@]}"; do
+    create_dotnet_service "$name" "$name" "$name"
+done
 
 echo "Creating NATS service..."
 
@@ -69,7 +69,12 @@ RestartSec=5
 WantedBy=multi-user.target
 EOF
 
-systemctl daemon-reload
-systemctl enable --now identity activity audit contact nats
+SERVICE_NAMES=()
+
+for name in "${DOTNET_SERVICES[@]}"; do
+    SERVICE_NAMES+=("${name}.service")
+done
+
+systemctl enable --now "${SERVICE_NAMES[@]}" nats.service
 
 echo "Provisioning complete."

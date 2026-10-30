@@ -29,7 +29,11 @@ jobs:
 
       - name: Stop existing services
         run: |
-          sudo systemctl stop identity activity audit contact nats || true
+          source ./scripts/deployment-config.sh
+          for name in "${DOTNET_SERVICES[@]}"; do
+            sudo systemctl stop "${name}.service" || true
+          done
+          sudo systemctl stop nats.service || true
 
       - name: Build and deploy services
         continue-on-error: true
@@ -49,4 +53,8 @@ jobs:
       - name: Start services
         if: always()
         run: |
-          sudo systemctl start identity activity audit contact nats
+          source ./scripts/deployment-config.sh
+          for name in "${DOTNET_SERVICES[@]}"; do
+            sudo systemctl start "${name}.service"
+          done
+          sudo systemctl start nats.service

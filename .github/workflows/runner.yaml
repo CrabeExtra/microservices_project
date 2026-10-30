@@ -21,14 +21,6 @@ jobs:
       - name: Provision server
         run: sudo bash ./provision.sh
 
-      - name: Build .NET services
-        run: |
-          dotnet restore ./Identity/Identity.csproj
-          dotnet publish ./Identity/Identity.csproj -c Release -o ./publish/Identity
-          dotnet publish ./Activity/Activity.csproj -c Release -o ./publish/Activity
-          dotnet publish ./Audit/Audit.csproj -c Release -o ./publish/Audit
-          dotnet publish ./Contact/Contact.csproj -c Release -o ./publish/Contact
-
       - name: Build frontend
         working-directory: ./Frontend
         run: |
@@ -39,9 +31,8 @@ jobs:
         run: |
           sudo systemctl stop identity activity audit contact nats || true
 
-      - name: Deploy backend
-        run: |
-          rsync -av --delete ./publish/ ~/Projects/Portfolio/
+      - name: Build and deploy services
+        run: bash ./deploy-services.sh
 
       - name: Deploy frontend
         run: |

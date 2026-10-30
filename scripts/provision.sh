@@ -76,7 +76,7 @@ EOF
 
     for i in "${!DOTNET_SERVICES[@]}"; do
         name="${DOTNET_SERVICES[$i]}"
-        port=$((5001 + i))
+        port=$((5000 + i))
 
         cat <<EOF
     handle /api/${name,,}/* {

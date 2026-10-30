@@ -8,8 +8,14 @@ using Contact.Domain;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// TODO: Properly manage cors origins before deployment.
-builder.Services.AddCors(options => options.AddPolicy("AllowAll", policy => policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()));
+builder.Services.AddCors(options => options.AddPolicy("AllowSpecificOrigins", policy =>
+    policy.WithOrigins(
+        "https://judebradbury.com",
+        "http://192.168.4.46:3001"
+    )
+    .AllowAnyMethod()
+    .AllowAnyHeader()
+));
 
 // API layer
 

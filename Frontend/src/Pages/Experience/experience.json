@@ -1,3 +1,52 @@
 {
-    
+    "roles": [
+        {
+            "company": "Mirai",
+            "title": "Senior Product Engineer",
+            "interval": "Nov 2025 - Jun 2026",
+            "points": [
+                "Acted as the most senior developer and tech lead working directly with the CEO.",
+                "Architected and maintained microservices.",
+                "Provided mentoring to other engineers where required.",
+                "Designed and managed agentic engineering workflows.",
+                "Designed and built software to help clients become compliant with AML/CTF regulations.",
+                "Worked with Kubernetes (ArgoCD GUI), PostgreSQL, Drizzle, NestJS, ReactJS (including RefineDev, Ant Design and other libraries), Docker, Stripe and Stripe integrations, Google AI SDK (including AI integrations such as chatbots), AWS, and more.",
+                "Built APIs, scheduling systems, and AI helper chatbots.",
+                "Collaborated and communicated with technical and non-technical team members in a small, close-knit team to produce results."
+            ]
+        }, 
+        {
+            "company": "Dematic",
+            "title": "Software Engineer",
+            "interval": "Apr 2024 - Nov 2025",
+            "points": [
+                "Built the entirety of the frontend and backend Java Spring Boot stack for a warehouse optimisation project that the customer reported increased throughput by 200% relative to their previous system. This included deploying the solution to the customer and providing post-deployment support.",
+                "Built over 50% of the CWP (Connected Workforce Platform) project from the ground up through to its first deployment, using C# .NET, React Bootstrap, MS SQL Server, ReactJS, Bootstrap, and more.",
+                "By my second year, I was writing tasks, delegating work, leading development, and assisting with the procurement of performance documentation.",
+                "Provided on-call support and maintenance of customer servers, writing reliable code to ensure ease of support, maximum uptime, and operational efficiency.",
+                "Built warehouse optimisation systems, working with both legacy codebases and greenfield projects.",
+                "Repaired longstanding software errors that had remained unresolved for years prior to my employment.",
+                "Worked on and oversaw the deployment of Android applications written in Python.",
+                "Provided mentoring and onboarding to engineers ranging from interns to mid-level developers, assisted with recruitment interviews and technical assessments, and worked on embedded systems in C/C++.",
+                "Ensured high unit test coverage using xUnit and Moq."
+            ]
+        },
+        {
+            "company": "Earth Guardians",
+            "title": "Software Engineer - Tech Lead",
+            "interval": "Dec 2021 - Feb 2024",
+            "points": [
+                "Promoted to tech lead after my first year. By my second year, I was architecting solutions and delegating work to other engineers, ensuring senior engineers were aligned with my system designs.",
+                "Worked directly with the CEO and other non-technical executives.",
+                "Built, deployed, and maintained full-stack greenfield projects using Node.js, Express.js, and React Bootstrap.",
+                "Built frontend Google Maps integrations, handling and optimising large-scale GeoJSON and KML datasets.",
+                "Worked on legacy Ruby on Rails projects and coordinated deployments between legacy and modern codebases to achieve efficient scaling.",
+                "Made numerous repairs that brought legacy Ruby on Rails system uptime to 100%, eliminating intermittent crashes and automatic restarts in the CI/CD pipeline.",
+                "Built CI/CD pipelines from scratch and contributed to existing legacy systems.",
+                "Built and maintained PostgreSQL databases and NoSQL MongoDB databases.",
+                "Built smart contracts in Solidity and Rust, achieving 100% automated test coverage.",
+                "Trained and mentored newer engineers and assisted with recruitment."
+            ]
+        }
+    ]
 }

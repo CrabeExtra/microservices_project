@@ -6,14 +6,13 @@ using Microsoft.AspNetCore.Mvc;
 namespace Contact.Api.Controller;
 
 [ApiController]
-[Route("api/interaction")]
-public class RecordController(
+public class InteractionController(
     IInteractionService interactionService
-) : ControllerBase
+) : BaseController
 {
 
     [HttpPost]
-    public async Task<IActionResult> CreateRecord([FromBody] InteractionDto interactionDto, CancellationToken cancellationToken)
+    public async Task<IActionResult> HandleInteraction([FromBody] InteractionDto interactionDto, CancellationToken cancellationToken)
     {
 
         var response = await interactionService.HandleInteraction(interactionDto, cancellationToken);

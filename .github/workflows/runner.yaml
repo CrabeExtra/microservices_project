@@ -27,14 +27,6 @@ jobs:
           npm ci
           npm run build
 
-      - name: Stop existing services
-        run: |
-          source ./scripts/deployment-config.sh
-          for name in "${DOTNET_SERVICES[@]}"; do
-            sudo systemctl stop "${name}.service" || true
-          done
-          sudo systemctl stop nats.service || true
-
       - name: Build and deploy services
         continue-on-error: true
         run: bash ./scripts/deploy-services.sh
@@ -49,12 +41,3 @@ jobs:
       - name: Deploy NATS
         run: |
           install -m 755 ./nats-server ~/Projects/Portfolio/nats-server
-
-      - name: Start services
-        if: always()
-        run: |
-          source ./scripts/deployment-config.sh
-          for name in "${DOTNET_SERVICES[@]}"; do
-            sudo systemctl start "${name}.service"
-          done
-          sudo systemctl start nats.service

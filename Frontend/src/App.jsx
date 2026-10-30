@@ -1,6 +1,6 @@
 
 import './App.css';
-import { Routes } from './Pages';
+import { Routes } from 'Global';
 
 function App() {
   return (

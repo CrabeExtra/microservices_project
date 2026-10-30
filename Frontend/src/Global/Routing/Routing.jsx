@@ -6,14 +6,15 @@ import {
 
 import {
     Navbar
-} from "../../Global";
+} from "..";
 import {
     Main,
     Experience,
     Skills,
     Education,
-    Contact
-} from "../";
+    Contact,
+    Projects
+} from "Pages";
 
 export default function Routing() {
 
@@ -25,6 +26,7 @@ export default function Routing() {
                     <Route path="/experience" element={<Experience />} />
                     <Route path="/skills" element={<Skills /> } />
                     <Route path="/education" element={<Education />} />
+                    <Route path="/projects" element={<Projects />} />
                     <Route path="/contact" element={<Contact />} />
                 </Route>
             </Routes>

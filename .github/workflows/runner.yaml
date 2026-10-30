@@ -25,6 +25,9 @@ jobs:
         run: |
           sudo caddy validate --config /etc/caddy/Caddyfile
           sudo systemctl reload caddy
+  
+      - name: Configure frontend environment
+        run: cp /deployments/Portfolio/config/Frontend.env ./Frontend/.env
 
       - name: Build frontend
         working-directory: ./Frontend

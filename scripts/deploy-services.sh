@@ -36,6 +36,8 @@ for name in "${DOTNET_SERVICES[@]}"; do
     rm -rf "$STAGING" "$BACKUP"
     mkdir -p "$STAGING"
 
+    cp "/deployments/Portfolio/config/${name}.env" "$STAGING/.env" # configure environment
+
     if ! cp -a "$OUTPUT/." "$STAGING/"; then
         echo "STAGING FAILED: $name"
         rm -rf "$STAGING"

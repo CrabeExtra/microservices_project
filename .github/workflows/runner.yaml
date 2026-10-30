@@ -39,7 +39,8 @@ jobs:
         continue-on-error: true
         run: |
           mkdir -p ~/Projects/Portfolio/Frontend
-          rsync -av --delete ./Frontend/dist/ ~/microservices_project/microservices_project/Frontend/
+          rm -rf ~/Projects/Portfolio/Frontend/*
+          cp -a ./Frontend/dist/. ~/Projects/Portfolio/Frontend/
 
       - name: Deploy NATS
         run: |

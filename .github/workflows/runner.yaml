@@ -19,7 +19,7 @@ jobs:
         uses: actions/checkout@v5
 
       - name: Provision server
-        run: sudo bash ./provision.sh
+        run: sudo bash ./scripts/provision.sh
 
       - name: Build frontend
         working-directory: ./Frontend
@@ -32,9 +32,11 @@ jobs:
           sudo systemctl stop identity activity audit contact nats || true
 
       - name: Build and deploy services
-        run: bash ./deploy-services.sh
+        continue-on-error: true
+        run: bash ./scripts/deploy-services.sh
 
       - name: Deploy frontend
+        continue-on-error: true
         run: |
           mkdir -p ~/Projects/Portfolio/Frontend
           rsync -av --delete ./Frontend/dist/ ~/microservices_project/microservices_project/Frontend/

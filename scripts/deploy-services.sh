@@ -41,7 +41,7 @@ for name in "${SERVICES[@]}"; do
     rm -rf "$STAGING" "$BACKUP"
     mkdir -p "$STAGING"
 
-    if ! rsync -a --delete "$OUTPUT/" "$STAGING/"; then
+    if ! cp -a "$OUTPUT/." "$STAGING/"; then
         echo "STAGING FAILED: $name"
         rm -rf "$STAGING"
         FAILED+=("$name")

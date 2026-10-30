@@ -10,8 +10,12 @@ pacman -S --needed --noconfirm \
     dotnet-sdk \
     aspnet-runtime \
     nodejs \
-    npm \
-    nats-server
+    npm 
+
+echo "Installing NATS Server..."
+
+curl -sf https://binaries.nats.dev/nats-io/nats-server/v2@latest | sh
+install -m 755 nats-server /usr/local/bin/nats-server
 
 echo "Creating deployment directory..."
 mkdir -p "$DEPLOY_DIR"

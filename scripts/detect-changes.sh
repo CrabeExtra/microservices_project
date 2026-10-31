@@ -12,9 +12,16 @@ MARKER="/deployments/Portfolio/.provisioned"
 BASE="${GITHUB_EVENT_BEFORE:-${1:-}}"
 HEAD="${GITHUB_SHA:-HEAD}"
 
+echo "Provisioned marker exists: $([[ -f "$MARKER" ]] && echo true || echo false)"
+echo "BASE: $BASE"
+echo "HEAD: $HEAD"
+echo "Changed files:"
+git diff --name-only "$BASE" "$HEAD"
+
 FULL=false
 FRONTEND=false
 NATS=false
+CADDY=false
 CHANGED_SERVICES=()
 
 # Fresh server: force complete deployment.

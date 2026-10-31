@@ -17,30 +17,48 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v5
+        with:
+          fetch-depth: 2 # this ensures there is a previous commit to check for diff (what services need to be restarted)
+
+      - name: Detect changes
+        id: changes
+        run: bash ./scripts/detect-changes.sh
 
       - name: Provision server
+        if: steps.changes.outputs.all == 'true'
         run: sudo bash ./scripts/provision.sh
 
       - name: Validate and reload Caddy
+        if: steps.changes.outputs.all == 'true' || steps.changes.outputs.caddy == 'true'
         run: |
           sudo caddy validate --config /etc/caddy/Caddyfile
           sudo systemctl reload caddy
+        
+      - name: Restart NATS
+        if: steps.changes.outputs.all == 'true' || steps.changes.outputs.nats == 'true'
+        run: sudo systemctl restart nats
   
       - name: Configure frontend environment
+        if: steps.changes.outputs.frontend == 'true' || steps.changes.outputs.all  == 'true' # changes to frontend would indicate the potential for new environment variables. 
         run: cp /deployments/Portfolio/config/Frontend.env ./Frontend/.env
 
       - name: Build frontend
         working-directory: ./Frontend
+        if: steps.changes.outputs.frontend == 'true' || steps.changes.outputs.all  == 'true' # deploy to frontend if change detected or yet to be deployed.
         run: |
           npm ci
           npm run build
 
       - name: Build and deploy services
         continue-on-error: true
+        if: steps.changes.outputs.services != ''
+        env:
+          DEPLOY_SERVICES: ${{ steps.changes.outputs.services }}
         run: bash ./scripts/deploy-services.sh
 
       - name: Deploy frontend
         continue-on-error: true
+        if: steps.changes.outputs.frontend == 'true' || steps.changes.outputs.all  == 'true' 
         run: |
           DEST="/deployments/Portfolio/Frontend"
 
@@ -49,6 +67,7 @@ jobs:
           cp -a ./Frontend/dist/. "$DEST/"
 
       - name: Configure frontend permissions
+        if: steps.changes.outputs.frontend == 'true' || steps.changes.outputs.all  == 'true'
         run: |
           sudo chown -R Jude:Jude /deployments/Portfolio
           sudo chmod 755 /deployments
@@ -56,3 +75,8 @@ jobs:
 
           sudo chgrp -R caddy /deployments/Portfolio/Frontend
           sudo chmod -R 755 /deployments/Portfolio/Frontend
+
+      - name: Mark server provisioned
+        if: steps.changes.outputs.all == 'true'
+        run: |
+          sudo touch /deployments/Portfolio/.provisioned

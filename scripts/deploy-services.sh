@@ -10,7 +10,14 @@ cd "$REPO_DIR" || exit 1
 
 FAILED=()
 
-for name in "${DOTNET_SERVICES[@]}"; do
+# Use the requested services, or all configured services if none supplied.
+if [[ -n "${DEPLOY_SERVICES:-}" ]]; then
+    read -r -a SERVICES_TO_DEPLOY <<< "$DEPLOY_SERVICES"
+else
+    SERVICES_TO_DEPLOY=("${DOTNET_SERVICES[@]}")
+fi
+
+for name in "${SERVICES_TO_DEPLOY[@]}"; do
 
     echo ""
     echo "=================================="

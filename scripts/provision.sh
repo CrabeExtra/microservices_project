@@ -4,20 +4,31 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/deployment-config.sh"
 
+# TODO: I should consider using specific versions of each of these to prevent breaking changes. 
 echo "Installing dependencies..."
 
-pacman -S --needed --noconfirm \
-    dotnet-sdk \
-    aspnet-runtime \
-    nodejs \
-    npm \
-    curl \
-    caddy
+pacman -S --needed --noconfirm curl # hopefully curl doesn't get breaking changes.
 
-echo "Installing NATS Server..."
+install_arch_package() {
+    local name="$1"
+    local version="$2"
+    local architecture="${3:-x86_64}"
+    local category="${name:0:1}"
+    local filename="${name}-${version}-${architecture}.pkg.tar.zst"
+    local url="https://archive.archlinux.org/packages/${category}/${name}/${filename}"
 
-curl -sf https://binaries.nats.dev/nats-io/nats-server/v2@latest | sh
-install -m 755 nats-server /usr/local/bin/nats-server
+    echo "Installing ${name} ${version}..."
+
+    curl -fsSL "$url" -o "/tmp/$filename"
+    pacman -U --needed --noconfirm "/tmp/$filename"
+    rm "/tmp/$filename"
+}
+
+install_arch_package dotnet-sdk-10.0 "$DOTNET_SDK_VERSION"
+install_arch_package aspnet-runtime-10.0 "$ASPNET_RUNTIME_VERSION"
+install_arch_package nodejs "$NODEJS_VERSION"
+install_arch_package npm "$NPM_VERSION" any
+install_arch_package caddy "$CADDY_VERSION"
 
 echo "Creating deployment directory..."
 mkdir -p "$DEPLOY_DIR"

@@ -16,7 +16,7 @@ DOTNET_SERVICES=(
 ARCH_REPO_DATE="2026/10/31"
 
 # Current package versions. Adding these here so I can just change the version number here, push to prod and it will automatically update on the server.
-# NOTE FOR LATER: TO UPGRADE, JUST CHANGE THE VERSION HERE
+# NOTE FOR LATER: TO UPGRADE, JUST CHANGE THE VERSION HERE AND ADD IT TO THE ARCH_PACKAGES ARRAY
 DOTNET_SDK_VERSION="10.0.13.sdk113-1"
 ASPNET_RUNTIME_VERSION="10.0.13.sdk113-1"
 NODEJS_VERSION="26.11.1-1"
@@ -24,3 +24,12 @@ NPM_VERSION="12.2.1-1"
 CADDY_VERSION="2.11.7-1"
 
 NATS_SERVER_VERSION="2.15.2"
+
+# format: name|version|architecture, e.g. nodejs|26.11.1-1|x86_64
+ARCH_PACKAGES=(
+    "dotnet-sdk-10.0|$DOTNET_SDK_VERSION|x86_64"
+    "aspnet-runtime-10.0|$ASPNET_RUNTIME_VERSION|x86_64"
+    "nodejs|$NODEJS_VERSION|x86_64"
+    "npm|$NPM_VERSION|any"
+    "caddy|$CADDY_VERSION|x86_64"
+)

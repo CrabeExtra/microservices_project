@@ -4,10 +4,9 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 source "$SCRIPT_DIR/deployment-config.sh"
 
-# TODO: I should consider using specific versions of each of these to prevent breaking changes. 
 echo "Installing dependencies..."
 
-pacman -S --needed --noconfirm curl # hopefully curl doesn't get breaking changes.
+pacman -S --needed --noconfirm curl # hopefully curl doesn't get breaking changes..
 
 install_arch_package() {
     local name="$1"
@@ -39,11 +38,18 @@ install_arch_package() {
     rm -f "/tmp/$filename"
 }
 
-install_arch_package dotnet-sdk-10.0 "$DOTNET_SDK_VERSION"
-install_arch_package aspnet-runtime-10.0 "$ASPNET_RUNTIME_VERSION"
-install_arch_package nodejs "$NODEJS_VERSION"
-install_arch_package npm "$NPM_VERSION" any
-install_arch_package caddy "$CADDY_VERSION"
+for package in "${ARCH_PACKAGES[@]}"; do
+    IFS='|' read -r name version architecture <<< "$package"
+    install_arch_package "$name" "$version" "$architecture"
+done
+
+echo "Installing NATS Server ${NATS_SERVER_VERSION}..."
+
+curl -fsSL \
+    "https://binaries.nats.dev/nats-io/nats-server/v2@v${NATS_SERVER_VERSION}" \
+    | sh
+
+install -m 755 nats-server /usr/local/bin/nats-server
 
 echo "Creating deployment directory..."
 mkdir -p "$DEPLOY_DIR"

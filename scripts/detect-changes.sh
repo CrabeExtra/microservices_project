@@ -73,6 +73,14 @@ echo "nats=$NATS" >> "$GITHUB_OUTPUT"
 echo "caddy=${CADDY:-false}" >> "$GITHUB_OUTPUT"
 echo "services=${CHANGED_SERVICES[*]}" >> "$GITHUB_OUTPUT"
 
+if [[ "$FULL" == true ]]; then
+    CHANGED_SERVICES=("${DOTNET_SERVICES[@]}")
+    echo "Full deployment: true"
+    echo "All components will be deployed."
+    echo "Services: ${CHANGED_SERVICES[*]}"
+    exit 0
+fi
+
 echo "Full deployment: $FULL"
 echo "Frontend: $FRONTEND"
 echo "Caddy: ${CADDY:-false}"

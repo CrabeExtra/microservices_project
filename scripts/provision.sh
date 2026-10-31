@@ -17,11 +17,26 @@ install_arch_package() {
     local filename="${name}-${version}-${architecture}.pkg.tar.zst"
     local url="https://archive.archlinux.org/packages/${category}/${name}/${filename}"
 
-    echo "Installing ${name} ${version}..."
+    local installed_version
+    installed_version="$(pacman -Q "$name" 2>/dev/null | awk '{print $2}' || true)"
+
+    if [[ "$installed_version" == "$version" ]]; then
+        echo "$name $version already installed. Skipping."
+        return 0
+    fi
+
+    echo "Installing $name $version (currently: ${installed_version:-not installed})..."
 
     curl -fsSL "$url" -o "/tmp/$filename"
+
+    # Remove an existing version to avoid package conflicts.
+    if [[ -n "$installed_version" ]]; then
+        pacman -Rdd --noconfirm "$name"
+    fi
+
     pacman -U --needed --noconfirm "/tmp/$filename"
-    rm "/tmp/$filename"
+
+    rm -f "/tmp/$filename"
 }
 
 install_arch_package dotnet-sdk-10.0 "$DOTNET_SDK_VERSION"

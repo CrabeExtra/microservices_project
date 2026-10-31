@@ -23,6 +23,9 @@ jobs:
       - name: Detect changes
         id: changes
         run: bash ./scripts/detect-changes.sh
+        env:
+          GITHUB_EVENT_BEFORE: ${{ github.event.before }}
+          GITHUB_SHA: ${{ github.sha }}
 
       - name: Provision server
         if: steps.changes.outputs.all == 'true'

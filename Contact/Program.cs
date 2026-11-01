@@ -44,12 +44,6 @@ builder.Services.AddMessaging();
 
 var app = builder.Build();
 
-// middlewares
-if(app.Environment.IsDevelopment())
-{
-    app.MapOpenApi();
-}
-
 app.UseMiddleware<ExceptionMiddleware>();
 
 //env

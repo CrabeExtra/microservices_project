@@ -8,6 +8,7 @@ export const SERVICE_PORT_MAP = new Map([
     ['identity', 5000],
     ['audit', 5001],
     ['activity', 5002],
-    ['contact', 5003]
+    ['contact', 5003],
+    ['personal', 5004]
 ]);
 

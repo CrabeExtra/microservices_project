@@ -12,8 +12,8 @@ export default function Experience() {
 
     return (
         <Col className="align-items-center container-col">
-            <Row className="justify-content-center">
-                <Col xs={10} style={{ height: "fit-content" }}>
+            <Row className="justify-content-center mt-5">
+                <Col xs={10}>
                     <h1>My Experience</h1>
                 </Col>
             </Row>

@@ -18,7 +18,6 @@ builder.Services.AddCors(options => options.AddPolicy("AllowSpecificOrigins", po
 ));
 
 // API layer
-builder.Services.AddOpenApi();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 

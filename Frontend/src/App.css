@@ -30,3 +30,15 @@
 .btn:hover {
   background-color: var(--colour-surface);
 }
+
+input, textarea {
+  background-color: var(--colour-surface);
+  border-radius: 5px;
+  border-color: var(--colour-sec);
+  color: var(--colour-prim);
+  padding: 1rem;
+}
+
+input:focus, textarea:focus {
+  outline: 2px solid var(--colour-highlight); 
+}

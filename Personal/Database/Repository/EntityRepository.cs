@@ -29,7 +29,7 @@ public class EntityRepository<T>(AppDbContext db)
 
     public virtual async Task CreateEntity(T entity, CancellationToken ct = default)
     {
-        await db.Set<T>().AddAsync(entity);
+        await db.Set<T>().AddAsync(entity, ct);
         await db.SaveChangesAsync(ct);
     }
 

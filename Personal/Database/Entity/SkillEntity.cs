@@ -1,19 +1,14 @@
+using Personal.Domain.Entity;
+
 namespace Personal.Database.Entity;
 
-public enum SkillType
-{
-    Frontend,
-    Backend,
-    Architecture,
-    Language,
-    Multidisciplinary
-}
 
 public class SkillEntity
 {
     public required Guid Id { get; set; }
-    public string Name { get; set; } = "";
-    public SkillType Type { get; set; }
+    public required string Name { get; set; }
+    public required SkillType Type { get; set; }
+    public string? Description { get; set; }
 
     public ICollection<SkillAccomplishmentEntity> Accomplishments { get; set; } = [];
     public ICollection<SkillSynonymsEntity> Synonyms { get; set; } = [];
@@ -22,7 +17,7 @@ public class SkillEntity
 public class SkillAccomplishmentEntity
 {
     public required Guid Id { get; set; }
-    public string Description { get; set; } = "";
+    public required string Text { get; set; }
     public required Guid SkillId { get; set; }
     public SkillEntity Skill { get; set; } = null!;
 }

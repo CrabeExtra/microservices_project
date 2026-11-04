@@ -13,7 +13,7 @@ public static class ApplicationCollectionExtensions
         // program scoped services
 
         // request scoped services
-        services.AddScoped<ISkillsService, SkillsService>();
+        services.AddScoped<ISkillService, SkillService>();
     
         return services;
     }

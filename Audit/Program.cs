@@ -25,10 +25,8 @@ builder.Services.AddApplication();
 
 // Database layer
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? "";
-builder.Services.AddDatabase(connectionString);
-
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlite("Data Source=audit.db")); // TODO add connection string variable not floating string.
+    options.UseSqlite(connectionString));
 
 // Messaging layer
 builder.Services.AddMessaging();

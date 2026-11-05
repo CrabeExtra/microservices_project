@@ -167,4 +167,8 @@ done
 systemctl enable "${SERVICE_NAMES[@]}"
 systemctl enable --now nats.service caddy.service
 
+# creating database directory
+mkdir -p "$DEPLOY_DIR/databases"
+chown "$DEPLOY_USER:$DEPLOY_USER" "$DEPLOY_DIR/databases"
+
 echo "Provisioning complete."

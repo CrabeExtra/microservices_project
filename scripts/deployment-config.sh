@@ -5,7 +5,7 @@ DEPLOY_USER="Jude"
 
 # Add new services, comment out stale services or remove old services from the deployment pipeline in ./dotnet-services-list.txt.
 # Services should be .Net web servers with csproj in root/ServiceName.
-mapfile -t DOTNET_SERVICES < ./config/dotnet-services.txt
+mapfile -t DOTNET_SERVICES < ./scripts/dotnet-services-list.txt
 
 # Arch Linux repository snapshot (when I last updated my server, don't judge if I don't update for a few months at a time and also please don't hack me).
 ARCH_REPO_DATE="2026/10/31"

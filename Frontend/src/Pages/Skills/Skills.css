@@ -16,3 +16,29 @@
 .searchbar-col {
     text-align: center;
 }
+
+.ag-cell:focus,
+.ag-cell:focus-visible,
+.ag-cell-focus,
+.ag-cell-no-focus {
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Row hover cursor */
+.ag-row:hover,
+.ag-cell:hover {
+    cursor: pointer;
+}
+
+/* Modal chrome */
+.modal-header {
+    background-color: var(--colour-surface-2);
+    border-color: var(--colour-surface-2);   /* optional: match separators */
+}
+
+.modal-body,
+.modal-footer {
+    background-color: var(--colour-surface);
+}

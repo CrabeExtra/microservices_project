@@ -1,6 +1,6 @@
 import { AgGridProvider, AgGridReact } from "ag-grid-react";
 import { AllCommunityModule, themeQuartz, InfiniteRowModelModule  } from "ag-grid-community";
-import { Col, Row } from "react-bootstrap";
+import { Button, Col, Modal, Row } from "react-bootstrap";
 
 import { jFetch } from "Global/Libraries";
 
@@ -28,6 +28,7 @@ export default function Skills() {
 
     const [searchedSkill, setSearchedSkill] = useState("");
     const [matchingSkills, setMatchingSkills] = useState([]);
+    const [selectedRow, setSelectedRow] = useState(null);
 
     useEffect(() => {
         if(searchedSkill && searchedSkill !== "")
@@ -38,22 +39,43 @@ export default function Skills() {
 
     }
 
+    const onRowClicked = (e) => {
+        if (e.data) setSelectedRow(e.data);
+    };
+
     const datasource = {
         getRows: async (params) => {
+
+            const colToField = (col) => {
+                switch (col) {
+                    case "skill":       return "Name";
+                    case "information": return "Description";
+                    case "type":        return "Type";
+                    default:            return col ?? "";
+                }
+            };
+
             const sort = params.sortModel[0];
+            const pageSize = params.endRow - params.startRow;
+            const page = Math.floor(params.startRow / pageSize) + 1;
 
             const query = new URLSearchParams({
-                start: params.startRow,
-                end: params.endRow,
-                sortField: sort?.colId ?? "",
-                sortDirection: sort?.sort ?? "",
-                searchFilter: searchedSkill ?? ""
+                page: String(page),
+                pageSize: String(pageSize),
+                sortField: colToField(sort?.colId),
+                asc: String(sort?.sort === "asc"),   // backend expects bool
+                search: searchedSkill ?? "",
             });
-            console.log('here')
+
             const response = await jFetch(`/personal/skills?${query}`);
             const data = await response.json();
 
-            params.successCallback(data.rows, data.totalCount);
+            params.successCallback(data.items.map(item => ({
+                skill: item.name,
+                type: item.type,
+                information: item.description,
+                accomplishments: item.accomplishments
+            })), data.totalCount);
         }
     };
 
@@ -77,20 +99,51 @@ export default function Skills() {
             </Row>
             <Row className="grid-row justify-content-center grid-row">
                 <Col className="grid-col" xs={4}>
+                    Click a skill to learn more about it.
                     <AgGridReact
                         // style
                         theme={terminalTheme}
                         // data
                         rowModelType="infinite"
                         datasource={datasource}
+                        onRowClicked={onRowClicked}
                         columnDefs={[
                             { field: "skill", flex: 1 },
                             { field: "type", flex: 1 },
-                            { field: "Accomplishments", flex: 3 }
+                            { field: "information", flex: 3 }
                         ]}
                     />
                 </Col>
             </Row>
+            <Modal
+                show={selectedRow !== null}
+                onHide={() => setSelectedRow(null)}
+                centered
+                size="lg"
+            >
+                <Modal.Header closeButton>
+                    <Modal.Title>{selectedRow?.skill}</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <p>{selectedRow?.information}</p>
+                    {selectedRow?.accomplishments.length > 0 ? 
+                        <ul>
+                            {(selectedRow?.accomplishments ?? []).map((a, i) => (
+                                <li key={i}>{a}</li>
+                            ))}
+                        </ul> 
+                    : 
+                        <p>
+                            I haven't added a list of notable accomplishments here yet!
+                        </p>
+                    }
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={() => setSelectedRow(null)}>
+                        Close
+                    </Button>
+                </Modal.Footer>
+            </Modal>
         </AgGridProvider>
     )
 }

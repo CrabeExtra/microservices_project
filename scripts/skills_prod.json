@@ -1,0 +1,1440 @@
+{
+  "skills": [
+    {
+      "name": "C#",
+      "type": "Language",
+      "description": "I have worked with C# for enterprise applications, APIs, distributed systems and production services. I feel very confident in my C# abilities.",
+      "synonyms": [
+        "CSharp",
+        "C#",
+        "C Sharp"
+      ],
+      "accomplishments": [
+        {
+          "company": "Dematic",
+          "text": "Built more than 50% of the Connected Workforce Platform from the ground up until first customer deployment using C#, .NET and MS SQL Server."
+        },
+        {
+          "company": "Dematic",
+          "text": "Developed backend APIs, application logic and optimised LINQ queries using Entity Framework Core."
+        },
+        {
+          "company": "Dematic",
+          "text": "Implemented multithreaded processing, resource allocation, validation, verification and encryption, including machine-serial verification."
+        },
+        {
+          "company": "Dematic",
+          "text": "Maintained high unit-test coverage using xUnit and Moq."
+        },
+        {
+          "company": "Personal",
+          "text": "The backend of this site (www.judebradbury.com) is built in C#, ASP.NET Core as a set of continuously deployed microservices that communicate via NATS as event-driven services. It's overkill for the use case of course, but I also really enjoyed designing and building the architecture."
+        }
+      ]
+    },
+    {
+      "name": "C++",
+      "type": "Language",
+      "description": "I have experience with C++ systems programming, graphics integrations, native apps and work involving embedded systems.",
+      "synonyms": [
+        "CPP",
+        "C++",
+        "C plus plus"
+      ],
+      "accomplishments": [
+        {
+          "company": "University",
+          "text": "I have plenty of C and C++ experience from university, including an honours level embedded systems units that I excelled at."
+        },
+        {
+          "company": "Personal",
+          "text": "I am working on a number of projects in C++, please refer to my Github account as I have some of them visible there."
+        },
+        {
+          "company": "Dematic",
+          "text": "Worked on embedded systems using C and C++."
+        }
+      ]
+    },
+    {
+      "name": "C",
+      "type": "Language",
+      "description": "I have some experience in C for low-level programming and embedded software development.",
+      "synonyms": [
+        "C",
+        "C Programming"
+      ],
+      "accomplishments": [
+        {
+          "company": "Dematic",
+          "text": "Worked on embedded systems and microprocessor-related development using C."
+        },
+        {
+          "company": "University",
+          "text": "I have plenty of C and C++ experience from university, including an honours level embedded systems units that I excelled at."
+        }
+      ]
+    },
+    {
+      "name": "CSS",
+      "type": "Language",
+      "description": "I have worked with CSS for the entirety of my career, very familiar with the language as well as abstract stacks such as Tailwind.",
+      "synonyms": [
+        "CSS",
+        "Cascading Style Sheets"
+      ],
+      "accomplishments": [
+        {
+          "company": "Mirai",
+          "text": "Built much of Mirai's greenfield Vigilend platform during pre-seed stages."
+        },
+        {
+          "company": "Dematic",
+          "text": "Built much of Dematic's CWP (Connected workforce platform) frontend from initial project start up until first release to customer."
+        },
+        {
+          "company": "Earth Guardians",
+          "text": "Built a great proportion of the original version of Earth Guardian's primary site at guardiansofearth.io. Rebuilt the entire GUI for this site more than once from scratch while working there."
+        },
+        {
+          "company": "Dematic",
+          "text": "Built much of Dematic's CWP (Connected workforce platform) frontend."
+        },
+        {
+          "company": "Mirai",
+          "text": "Designed and built software to help clients meet AML/CTF regulatory compliance requirements."
+        },
+        {
+          "company": "Dematic",
+          "text": "Built frontend interfaces for the Connected Workforce Platform using React and Bootstrap."
+        },
+        {
+          "company": "Earth Guardians",
+          "text": "Built and maintained frontend applications for greenfield projects using React and Bootstrap."
+        }
+      ]
+    },
+    {
+      "name": "HTML",
+      "type": "Language",
+      "description": "HTML I have worked with for my entire career. I am confident in my abilities to use abstract stacks as well as the basics of the 'language'.",
+      "synonyms": [
+        "HTML",
+        "HTML5",
+        "Hypertext markup language",
+        "Hyper-text markup language"
+      ],
+      "accomplishments": [
+        {
+          "company": "Mirai",
+          "text": "Built much of Mirai's greenfield Vigilend platform during pre-seed stages."
+        },
+        {
+          "company": "Dematic",
+          "text": "Built much of Dematic's CWP (Connected workforce platform) frontend from initial project start up until first release to customer."
+        },
+        {
+          "company": "Earth Guardians",
+          "text": "Built a great proportion of the original version of Earth Guardian's primary site at guardiansofearth.io. Rebuilt the entire GUI for this site more than once from scratch while working there."
+        },
+        {
+          "company": "Dematic",
+          "text": "Built much of Dematic's CWP (Connected workforce platform) frontend."
+        },
+        {
+          "company": "Mirai",
+          "text": "Designed and built software to help clients meet AML/CTF regulatory compliance requirements."
+        },
+        {
+          "company": "Dematic",
+          "text": "Built frontend interfaces for enterprise warehouse and workforce applications."
+        },
+        {
+          "company": "Earth Guardians",
+          "text": "Built and maintained frontend applications for multiple greenfield projects."
+        }
+      ]
+    },
+    {
+      "name": "JavaScript",
+      "type": "Language",
+      "description": "I have worked with JavaScript and Typescript for my entire career, I am a JS native developer across the entire stack.",
+      "synonyms": [
+        "Javascript",
+        "JS",
+        "ECMAScript",
+        "Typescript",
+        "TS"
+      ],
+      "accomplishments": [
+        {
+          "company": "Dematic",
+          "text": "Built and maintained a number of assistive scripts and internal business tools."
+        },
+        {
+          "company": "Mirai",
+          "text": "Built much of Mirai's greenfield Vigilend platform during pre-seed stages."
+        },
+        {
+          "company": "Dematic",
+          "text": "Built much of Dematic's CWP (Connected workforce platform) frontend from initial project start up until first release to customer."
+        },
+        {
+          "company": "Earth Guardians",
+          "text": "Built a great proportion of the original version of Earth Guardian's primary site at guardiansofearth.io. Rebuilt the entire GUI for this site more than once from scratch while working there."
+        },
+        {
+          "company": "Dematic",
+          "text": "Built much of Dematic's CWP (Connected workforce platform) frontend."
+        },
+        {
+          "company": "Mirai",
+          "text": "Designed and built software to help clients meet AML/CTF regulatory compliance requirements."
+        },
+        {
+          "company": "Earth Guardians",
+          "text": "Built and maintained frontend applications for multiple greenfield projects."
+        },
+        {
+          "company": "Dematic",
+          "text": "Built frontend functionality for the Connected Workforce Platform and warehouse optimisation applications."
+        },
+        {
+          "company": "Earth Guardians",
+          "text": "Developed full-stack applications and integrations using JavaScript, Node.js, ExpressJS and React."
+        }
+      ]
+    },
+    {
+      "name": "TypeScript",
+      "type": "Language",
+      "description": "I have worked with JavaScript and Typescript for my entire career, I am a TS native developer across the entire stack.",
+      "synonyms": [
+        "TS",
+        "Typescript"
+      ],
+      "accomplishments": [
+        {
+          "company": "Mirai",
+          "text": "Architected and maintained microservices and developed AML/CTF compliance software using TypeScript."
+        },
+        {
+          "company": "Dematic",
+          "text": "Built and maintained a number of assistive scripts and internal business tools."
+        },
+        {
+          "company": "Mirai",
+          "text": "Built much of Mirai's greenfield Vigilend platform during pre-seed stages."
+        },
+        {
+          "company": "Dematic",
+          "text": "Built much of Dematic's CWP (Connected workforce platform) frontend from initial project start up until first release to customer."
+        },
+        {
+          "company": "Earth Guardians",
+          "text": "Built a great proportion of the original version of Earth Guardian's primary site at guardiansofearth.io. Rebuilt the entire GUI for this site more than once from scratch while working there."
+        },
+        {
+          "company": "Dematic",
+          "text": "Built much of Dematic's CWP (Connected workforce platform) frontend."
+        },
+        {
+          "company": "Mirai",
+          "text": "Designed and built software to help clients meet AML/CTF regulatory compliance requirements."
+        },
+        {
+          "company": "Earth Guardians",
+          "text": "Built and maintained frontend applications for multiple greenfield projects."
+        },
+        {
+          "company": "Dematic",
+          "text": "Built frontend functionality for the Connected Workforce Platform and warehouse optimisation applications."
+        },
+        {
+          "company": "Earth Guardians",
+          "text": "Developed full-stack applications and integrations using JavaScript, Node.js, ExpressJS and React."
+        }
+      ]
+    },
+    {
+      "name": "Java",
+      "type": "Language",
+      "description": "I have plenty of Java development experience from game developement and modding to complex enterprise applications and warehouse optimisation systems.",
+      "synonyms": [
+        "Java",
+        "JVM",
+        "Java Virtual Machine",
+        "Kotlin"
+      ],
+      "accomplishments": [
+        {
+          "company": "Dematic",
+          "text": "Built the frontend and backend of a warehouse optimisation project using a Java Spring Boot stack; the customer reported a 200% throughput increase compared with its previous system."
+        },
+        {
+          "company": "Dematic",
+          "text": "Built, maintained and supported a number of full stack warehouse optimisation projects using legacy and modern versions of Java Springboot."
+        },
+        {
+          "company": "Personal",
+          "text": "Built mini minecraft mod called Mechanical Gap Fillers in Java for use alongside ATM10, and specifically to be interoperable with Applied Energistics mods, the Create mod and the Mekanism mod."
+        }
+      ]
+    },
+    {
+      "name": "Kotlin",
+      "type": "Language",
+      "description": "I have some personal Kotlin experience and am confident in the language.",
+      "synonyms": [
+        "Kotlin",
+        "Java"
+      ],
+      "accomplishments": [
+        {
+          "company": "Personal",
+          "text": "I have built some personal projects in Kotlin. You may be able to find some on my Github."
+        }
+      ]
+    },
+    {
+      "name": "R",
+      "type": "Language",
+      "description": "My R experience is academic, I have plenty of stats and reliability engineering experience that has often required drawing on R.",
+      "synonyms": ["R"],
+      "accomplishments": []
+    },
+    {
+      "name": "SQL",
+      "type": "Language",
+      "description": "I have worked with SQL in some form for my entire career and am very confident in this area. I have considerable experience with various SQL servers such as Postgres and MS SQL Server as well as with abstract SQL systems such as .NET's Entity Framework and the equivalent stack(s) in Java and Node. Database design and optimisation, support and debugging via relational database querying, data manipulation and query optimisation are a comfort zone with regards to the extent of my experience.",
+      "synonyms": [
+        "SQL",
+        "Structured Query Language",
+        "Postgres",
+        "Postgresql",
+        "MS SQL Server",
+        "SQLite",
+        "MySQL"
+      ],
+      "accomplishments": [
+        {
+          "company": "Dematic",
+          "text": "Built more than 50% of the Connected Workforce Platform from the ground up until first customer deployment using C#, .NET and MS SQL Server."
+        },
+        {
+          "company": "Dematic",
+          "text": "Developed backend APIs, application logic and optimised LINQ queries using Entity Framework Core."
+        },
+        {
+          "company": "Dematic",
+          "text": "Developed and maintained SQL Server-backed applications and optimised database queries."
+        },
+        {
+          "company": "Earth Guardians",
+          "text": "Built and maintained PostgreSQL databases for full-stack applications."
+        },
+        {
+          "company": "Mirai",
+          "text": "Worked with PostgreSQL-backed compliance software using Drizzle ORM."
+        }
+      ]
+    },
+    {
+      "name": "Python",
+      "type": "Language",
+      "description": "I spent a fair bit of time at multiple companies working on new python scripts, maintaining and repairing built scripts, and developing android apps.",
+      "synonyms": [
+        "Python",
+        "Python 3"
+      ],
+      "accomplishments": [
+        {
+          "company": "Dematic",
+          "text": "Built and maintained a number of assistive scripts and internal business tools."
+        },
+        {
+          "company": "Dematic",
+          "text": "Worked on and oversaw deployment of Android applications developed using Python."
+        },
+        {
+          "company": "Earth Guardians",
+          "text": "Built and maintained a number of assistive scripts and tools."
+        }
+      ]
+    },
+    {
+      "name": "Solidity",
+      "type": "Language",
+      "description": "I worked on a number of smart contracts (such as NFTs) from initial ideation and desgin to final deployment onto the chain as well as subsequent maintenance.",
+      "synonyms": ["Solidity"],
+      "accomplishments": [
+        {
+          "company": "Earth Guardians",
+          "text": "Developed and maintained blockchain smart contracts using Solidity."
+        },
+        {
+          "company": "Earth Guardians",
+          "text": "Implemented automated smart-contract tests and achieved complete test coverage for the contracts worked on."
+        }
+      ]
+    },
+    {
+      "name": "Go",
+      "type": "Language",
+      "description": "I have used Go for some personal projects.",
+      "synonyms": [
+        "Go",
+        "Golang"
+      ],
+      "accomplishments": []
+    },
+    {
+      "name": "Ruby",
+      "type": "Language",
+      "description": "My Ruby development experience includes building, maintenance and integration of legacy applications.",
+      "synonyms": [
+        "Ruby",
+        "ROR",
+        "Ruby on Rails"
+      ],
+      "accomplishments": [
+        {
+          "company": "Earth Guardians",
+          "text": "Developed and maintained legacy Ruby on Rails applications, contributing to system stability and 100% uptime."
+        }
+      ]
+    },
+    {
+      "name": "Rust",
+      "type": "Language",
+      "description": "Rust systems and smart-contract development.",
+      "synonyms": [
+        "RUST"
+      ],
+      "accomplishments": [
+        {
+          "company": "Earth Guardians",
+          "text": "Developed blockchain smart contracts using Rust."
+        }
+      ]
+    },
+    {
+      "name": "Verilog",
+      "type": "Language",
+      "description": "I have some experience in Verilog. I studied this in uni for some classes, as well as studied up while considering an honours project that would involve Verilog.",
+      "synonyms": [
+        "Verilog",
+        "FPGA",
+        "Field programmable gate array"
+      ],
+      "accomplishments": []
+    },
+    {
+      "name": ".NET",
+      "type": "Backend",
+      "description": "I have plenty of .NET experience and am very confident in my .NET knowledge.",
+      "synonyms": [
+        "ASP.NET",
+        ".NET",
+        "Dot Net",
+        "DotNet",
+        ".NET Core"
+      ],
+      "accomplishments": [
+        {
+          "company": "Dematic",
+          "text": "Built more than 50% of the Connected Workforce Platform from the ground up using C# and .NET."
+        },
+        {
+          "company": "Dematic",
+          "text": "Developed backend APIs, application logic and optimised LINQ queries using Entity Framework Core."
+        },
+        {
+          "company": "Dematic",
+          "text": "Maintained high unit-test coverage using xUnit and Moq."
+        },
+        {
+          "company": "Personal",
+          "text": "The backend of this site (www.judebradbury.com) is built in C#, ASP.NET Core as a set of continuously deployed microservices that communicate via NATS as event-driven services. It's overkill for the use case of course, but I also really enjoyed designing and building the architecture."
+        },
+        {
+          "company": "Dematic",
+          "text": "Developed APIs, business logic and Entity Framework Core data access for warehouse optimisation projects."
+        }
+      ]
+    },
+    {
+      "name": "ASP.NET Core",
+      "type": "Backend",
+      "description": "Backend web application and REST API development using ASP.NET Core.",
+      "synonyms": [
+        "ASPNET Core",
+        "ASP.NET",
+        "ASP.NET Core"
+      ],
+      "accomplishments": [
+        {
+          "company": "Dematic",
+          "text": "Built more than 50% of the Connected Workforce Platform from the ground up using C# and .NET."
+        },
+        {
+          "company": "Dematic",
+          "text": "Developed backend APIs, application logic and optimised LINQ queries using Entity Framework Core."
+        },
+        {
+          "company": "Dematic",
+          "text": "Maintained high unit-test coverage using xUnit and Moq."
+        },
+        {
+          "company": "Personal",
+          "text": "The backend of this site (www.judebradbury.com) is built in C#, ASP.NET Core as a set of continuously deployed microservices that communicate via NATS as event-driven services. It's overkill for the use case of course, but I also really enjoyed designing and building the architecture."
+        },
+        {
+          "company": "Dematic",
+          "text": "Developed APIs, business logic and Entity Framework Core data access for warehouse optimisation projects."
+        }
+      ]
+    },
+    {
+      "name": "Spring Boot",
+      "type": "Backend",
+      "description": "I have strong Java fullstack application development using Spring Boot. I know spring boot is a backend stack, but some of the legacy systems I worked with had integrated Java/Javascript frontends.",
+      "synonyms": [
+        "Springboot",
+        "Spring boot",
+        "Spring"
+      ],
+      "accomplishments": [
+        {
+          "company": "Dematic",
+          "text": "Built the frontend and backend of a warehouse optimisation project using a Java Spring Boot stack; the customer reported a 200% throughput increase compared with its previous system."
+        },
+        {
+          "company": "Dematic",
+          "text": "Built, maintained and supported a number of full stack warehouse optimisation projects using legacy and modern versions of Java Springboot."
+        }
+      ]
+    },
+    {
+      "name": "Node.js",
+      "type": "Backend",
+      "description": " I have been developing with NodeJS for my entire career in some form, so strong server-side JavaScript and TypeScript development using Node.js. I also have used node for a number of scripts or internal tools.",
+      "synonyms": [
+        "Node",
+        "Node.JS",
+        "NodeJS"
+      ],
+      "accomplishments": [
+        {
+          "company": "Earth Guardians",
+          "text": "Built and maintained Node.js and Express backends for greenfield applications."
+        },
+        {
+          "company": "Mirai",
+          "text": "Developed and maintained TypeScript microservices and APIs using NestJS for AML/CTF compliance software."
+        },
+        {
+          "company": "Dematic",
+          "text": "Built and maintained a number of assistive scripts and internal business tools."
+        }
+      ]
+    },
+    {
+      "name": "NestJS",
+      "type": "Backend",
+      "description": "Structured TypeScript backend development using NestJS and modular/micro services.",
+      "synonyms": [
+        "NestJS",
+        "Nest"
+      ],
+      "accomplishments": [
+        {
+          "company": "Mirai",
+          "text": "Developed and maintained TypeScript microservices and APIs using NestJS for AML/CTF compliance software."
+        }
+      ]
+    },
+    {
+      "name": "Express.js",
+      "type": "Backend",
+      "description": "I am very comfortable building backend applications and APIs using Express.js.",
+      "synonyms": [
+        "Express.js",
+        "Express",
+        "ExpressJS"
+      ],
+      "accomplishments": [
+        {
+          "company": "Earth Guardians",
+          "text": "Built and maintained application backends using Node.js and Express."
+        }
+      ]
+    },
+    {
+      "name": "REST APIs",
+      "type": "Backend",
+      "description": "I have been developing REST APIs for the entirety of my career. I am confident in my full understanding of REST APIs and their usage as a full stack software engineer.",
+      "synonyms": [
+        "REST APIs",
+        "REST",
+        "RESTful APIs",
+        "Web APIs"
+      ],
+      "accomplishments": [
+        {
+          "company": "Dematic",
+          "text": "Built more than 50% of the Connected Workforce Platform from the ground up until first customer deployment using C#, .NET and MS SQL Server."
+        },
+        {
+          "company": "Mirai",
+          "text": "Built APIs for AML/CTF compliance software, including integrations with external services."
+        },
+        {
+          "company": "Dematic",
+          "text": "Developed backend APIs for warehouse optimisation such as the Connected Workforce Platform."
+        },
+        {
+          "company": "Earth Guardians",
+          "text": "Built backend APIs for full-stack greenfield applications."
+        },
+        {
+          "company": "Personal",
+          "text": "The backend of this site (www.judebradbury.com) is built in C#, ASP.NET Core as a set of continuously deployed microservices that communicate via NATS as event-driven services. It's overkill for the use case of course, but I also really enjoyed designing and building the architecture."
+        }
+      ]
+    },
+    {
+      "name": "NATS",
+      "type": "Backend",
+      "description": "I am very comfortable working with inter-microservice messaging systems, including event driven systems such as NATS and Jetstream.",
+      "synonyms": [
+        "NATS",
+        "NATS.io",
+        "Jetstream"
+      ],
+      "accomplishments": [
+        {
+          "company": "Personal",
+          "text": "The backend of this site (www.judebradbury.com) is built in C#, ASP.NET Core as a set of continuously deployed microservices that communicate via NATS as event-driven services. It's overkill for the use case of course, but I also really enjoyed designing and building the architecture."
+        }
+      ]
+    },
+    {
+      "name": "Entity Framework Core",
+      "type": "Backend",
+      "description": "Most of my experience with .NET has been learning about and making good use of the Entity Framework Core.",
+      "synonyms": [
+        "Entity Framework Core",
+        "EF Core",
+        "Entity Framework",
+        "EF"
+      ],
+      "accomplishments": [
+        {
+          "company": "Dematic",
+          "text": "Built more than 50% of the Connected Workforce Platform from the ground up using C# and .NET."
+        },
+        {
+          "company": "Dematic",
+          "text": "Developed backend APIs, application logic and optimised LINQ queries using Entity Framework Core."
+        },
+        {
+          "company": "Dematic",
+          "text": "Maintained high unit-test coverage using xUnit and Moq."
+        },
+        {
+          "company": "Personal",
+          "text": "The backend of this site (www.judebradbury.com) is built in C#, ASP.NET Core as a set of continuously deployed microservices that communicate via NATS as event-driven services. It's overkill for the use case of course, but I also really enjoyed designing and building the architecture."
+        },
+        {
+          "company": "Dematic",
+          "text": "Developed APIs, business logic and Entity Framework Core data access for warehouse optimisation projects."
+        }
+      ]
+    },
+    {
+      "name": "LINQ",
+      "type": "Backend",
+      "description": "Most of my experience with .NET has been learning about and making good use of the LINQ queries.",
+      "synonyms": [
+        "LINQ",
+        "Language Integrated Query"
+      ],
+      "accomplishments": [
+        {
+          "company": "Dematic",
+          "text": "Built more than 50% of the Connected Workforce Platform from the ground up using C# and .NET."
+        },
+        {
+          "company": "Dematic",
+          "text": "Developed backend APIs, application logic and optimised LINQ queries using Entity Framework Core."
+        },
+        {
+          "company": "Dematic",
+          "text": "Maintained high unit-test coverage using xUnit and Moq."
+        },
+        {
+          "company": "Personal",
+          "text": "The backend of this site (www.judebradbury.com) is built in C#, ASP.NET Core as a set of continuously deployed microservices that communicate via NATS as event-driven services. It's overkill for the use case of course, but I also really enjoyed designing and building the architecture."
+        },
+        {
+          "company": "Dematic",
+          "text": "Developed APIs, business logic and Entity Framework Core data access for warehouse optimisation projects."
+        }
+      ]
+    },
+    {
+      "name": "Drizzle ORM",
+      "type": "Backend",
+      "description": "I am confident in all ORMs, as my understanding of SQL allows me to easily understand how an ORM connects code to an SQL database server. This is no different for Drizzle ORM.",
+      "synonyms": [
+        "Drizzle ORM",
+        "Drizzle"
+      ],
+      "accomplishments": [
+        {
+          "company": "Mirai",
+          "text": "Used Drizzle with PostgreSQL in AML/CTF compliance software."
+        }
+      ]
+    },
+    {
+      "name": "React",
+      "type": "Frontend",
+      "description": "I have been building and maintaining frontends my entire career and am very confident in my abilities.",
+      "synonyms": [
+        "React",
+        "ReactJS"
+      ],
+      "accomplishments": [
+        {
+          "company": "Personal",
+          "text": "The frontend of this site (www.judebradbury.com) is built in React Bootstrap and is compiled and deployed using Vite."
+        },
+        {
+          "company": "Mirai",
+          "text": "Built much of Mirai's greenfield Vigilend platform during pre-seed stages."
+        },
+        {
+          "company": "Dematic",
+          "text": "Built much of Dematic's CWP (Connected workforce platform) frontend from initial project start up until first release to customer."
+        },
+        {
+          "company": "Earth Guardians",
+          "text": "Built a great proportion of the original version of Earth Guardian's primary site at guardiansofearth.io. Rebuilt the entire GUI for this site more than once from scratch while working there."
+        },
+        {
+          "company": "Dematic",
+          "text": "Built much of Dematic's CWP (Connected workforce platform) frontend."
+        },
+        {
+          "company": "Mirai",
+          "text": "Designed and built software to help clients meet AML/CTF regulatory compliance requirements."
+        },
+        {
+          "company": "Dematic",
+          "text": "Built frontend interfaces for the Connected Workforce Platform using React and Bootstrap."
+        },
+        {
+          "company": "Earth Guardians",
+          "text": "Built and maintained frontend applications for greenfield projects using React and Bootstrap."
+        }
+      ]
+    },
+    {
+      "name": "Bootstrap",
+      "type": "Frontend",
+      "description": "For most of my career, I have worked with bootstrap, I am very familiar with the stack and its wrappers and features.",
+      "synonyms": [
+        "Bootstrap",
+        "React Bootstrap",
+        "Bootstrap 5"
+      ],
+      "accomplishments": [
+        {
+          "company": "Personal",
+          "text": "The frontend of this site (www.judebradbury.com) is built in React Bootstrap and is compiled and deployed using Vite."
+        },
+        {
+          "company": "Dematic",
+          "text": "Built much of Dematic's CWP (Connected workforce platform) frontend from initial project start up until first release to customer."
+        },
+        {
+          "company": "Earth Guardians",
+          "text": "Built a great proportion of the original version of Earth Guardian's primary site at guardiansofearth.io. Rebuilt the entire GUI for this site more than once from scratch while working there."
+        },
+        {
+          "company": "Dematic",
+          "text": "Built much of Dematic's CWP (Connected workforce platform) frontend."
+        },
+        {
+          "company": "Dematic",
+          "text": "Built frontend interfaces for the Connected Workforce Platform using React and Bootstrap."
+        },
+        {
+          "company": "Earth Guardians",
+          "text": "Built and maintained frontend applications for greenfield projects using React and Bootstrap."
+        }
+      ]
+    },
+    {
+      "name": "Ant Design",
+      "type": "Frontend",
+      "description": "I have some experience using Ant Design at Mirai.",
+      "synonyms": [
+        "Ant Design",
+        "AntD"
+      ],
+      "accomplishments": [
+        {
+          "company": "Mirai",
+          "text": "Built AML/CTF compliance application interfaces using Ant Design."
+        }
+      ]
+    },
+    {
+      "name": "Refine",
+      "type": "Frontend",
+      "description": "I worked with the Refine package while working at Mirai.",
+      "synonyms": [
+        "Refine",
+        "RefineDev"
+      ],
+      "accomplishments": [
+        {
+          "company": "Mirai",
+          "text": "Used Refine with React and Ant Design to develop compliance application interfaces."
+        }
+      ]
+    },
+    {
+      "name": "Tailwind CSS",
+      "type": "Frontend",
+      "description": "I have some experience with personal projects using Tailwind.",
+      "synonyms": [
+        "Tailwind"
+      ],
+      "accomplishments": []
+    },
+    {
+      "name": "Redux",
+      "type": "Frontend",
+      "description": "Frontend state management using Redux was a skill I picked up while working on one of their legacy systems that involved React and Redux.",
+      "synonyms": [
+        "Redux"
+      ],
+      "accomplishments": [
+        {
+          "company": "Earth Guardians",
+          "text": "Built and maintained frontend applications for greenfield projects using React Redux."
+        }
+      ]
+    },
+    {
+      "name": "Vue.js",
+      "type": "Frontend",
+      "description": "I have some experience with Vue, I have found it to be very similar to react in many ways.",
+      "synonyms": [
+        "Vue.js",
+        "Vue",
+        "VueJS"
+      ],
+      "accomplishments": [
+        {
+          "company": "Dematic",
+          "text": "Worked with Vue.js across warehouse optimisation and enterprise software projects."
+        }
+      ]
+    },
+    {
+      "name": "Svelte",
+      "type": "Frontend",
+      "description": "I have some personal experience with Svelte, I put together a hastily strung together project in Svelte that you may be able to find on my Github.",
+      "synonyms": [
+        "Svelte"
+      ],
+      "accomplishments": []
+    },
+    {
+      "name": "Angular",
+      "type": "Frontend",
+      "description": "My Angular experience comes primarily from personal projects.",
+      "synonyms": [
+        "Angular"
+      ],
+      "accomplishments": []
+    },
+    {
+      "name": "Three.js",
+      "type": "Frontend",
+      "description": "I have some personal experience with ThreeJS for personal projects.",
+      "synonyms": [
+        "Three.js",
+        "ThreeJS"
+      ],
+      "accomplishments": []
+    },
+    {
+      "name": "PostgreSQL",
+      "type": "Backend",
+      "description": "I have plenty of experience with PostgreSQL servers and SQL servers in general.",
+      "synonyms": [
+        "Postgres"
+      ],
+      "accomplishments": [
+        {
+          "company": "Earth Guardians",
+          "text": "Built and maintained PostgreSQL databases for full-stack applications."
+        },
+        {
+          "company": "Mirai",
+          "text": "Worked with PostgreSQL-backed compliance software using Drizzle ORM."
+        }
+      ]
+    },
+    {
+      "name": "Microsoft SQL Server",
+      "type": "Backend",
+      "description": "While at Dematic, I gained a great amount of enterprise experience deploying with, navigating, and troubleshooting with Microsoft SQL Server.",
+      "synonyms": [
+        "Microsoft SQL Server",
+        "MS SQL Server",
+        "MSSQL",
+        "SQL Server"
+      ],
+      "accomplishments": [
+        {
+          "company": "Dematic",
+          "text": "Developed and maintained SQL Server-backed enterprise warehouse and workforce applications."
+        },
+        {
+          "company": "Dematic",
+          "text": "Built more than 50% of the Connected Workforce Platform from the ground up using C# and .NET. SQL Server was used for the first deployment."
+        },
+        {
+          "company": "Dematic",
+          "text": "Supported a number of Java projects while on an on-call schedule and was often the go-to engineer for a number of customers. This regularly involved troubleshooting by reading logs and documentation as well as navigating data in MS SQL Servers."
+        }
+      ]
+    },
+    {
+      "name": "SQLite",
+      "type": "Backend",
+      "description": "SQLite is great for applications that need to run on systems with limited resources. In addition, it's great for reducing development time and devops complexity for projects with relatively small datasets and where database access to most users are just 'reads'.",
+      "synonyms": [
+        "SQLite",
+        "Lite",
+        "SQL"
+      ],
+      "accomplishments": [
+        {
+          "company": "Personal",
+          "text": "This site (www.judebradbury.com) uses SQLite! It is a great use case, due to scale and write-specific throughput demands (or lack thereof!). In addition, the fact that this site's backend is split into microservices means that throughput requirements of each individual SQLite DB are reduced in case I later on have multiple write requirements in distinct domains."
+        },
+        {
+          "company": "Earth Guardians",
+          "text": "Some projects a Earth Guardians were a great fit for SQLite databases, such as the game 'which won', which I developed in Javascript with an SQLite database, deployed on an amazon AWS EC2 server."
+        }
+      ]
+    },
+    {
+      "name": "MongoDB",
+      "type": "Backend",
+      "description": "I have some experience in MongoDB and am comfortable developing with MongoDB.",
+      "synonyms": [
+        "MongoDB",
+        "Mongo"
+      ],
+      "accomplishments": [
+        {
+          "company": "Earth Guardians",
+          "text": "Built and maintained MongoDB databases for full-stack applications."
+        }
+      ]
+    },
+    {
+      "name": "MySQL",
+      "type": "Backend",
+      "description": "Most of my experience with MySQL is with personal projects. But I am confident in my abilities here.",
+      "synonyms": [
+        "MySQL",
+        "SQL"
+      ],
+      "accomplishments": []
+    },
+    {
+      "name": "Microservices",
+      "type": "Architecture",
+      "description": "This site has a backend that uses microservice architecture! It was very enjoyable to build.",
+      "synonyms": [
+        "Microservices",
+        "MS",
+        "Microservice Architecture"
+      ],
+      "accomplishments": [
+        {
+          "company": "Mirai",
+          "text": "Acted as the most senior developer and technical lead, architecting and maintaining microservices while working directly with the CEO."
+        },
+        {
+          "company": "Personal",
+          "text": "The backend of this site (www.judebradbury.com) is built in C#, ASP.NET Core as a set of continuously deployed microservices that communicate via NATS as event-driven services. It's overkill for the use case of course, but I also really enjoyed designing and building the architecture."
+        }
+      ]
+    },
+    {
+      "name": "System Architecture",
+      "type": "Architecture",
+      "description": "I am confident in my system architecture abilities and overall knowledge. I am confident that I can design systems that are sufficiently scalable and optimised for the use case up to big-data and ultra-high throughput systems.",
+      "synonyms": [
+        "System Architecture",
+        "Software Architecture",
+        "Systems Design"
+      ],
+      "accomplishments": [
+        {
+          "company": "Mirai",
+          "text": "Acted as the most senior developer and technical lead, contributing to the architecture and maintenance of microservices. This included maintenance of Kubernetes clusters."
+        },
+        {
+          "company": "Earth Guardians",
+          "text": "Architected solutions, delegated implementation work and aligned engineers around system design."
+        }
+      ]
+    },
+    {
+      "name": "Distributed Systems",
+      "type": "Architecture",
+      "description": "I am confident in my knowledge in distributed systems as well as my ability to apply that knowledge to my work.",
+      "synonyms": [
+        "Distributed Computing"
+      ],
+      "accomplishments": [
+        {
+          "company": "Mirai",
+          "text": "Architected and maintained microservices for AML/CTF compliance software."
+        },
+        {
+          "company": "Earth Guardians",
+          "text": "Coordinated changes and deployments across legacy and modern application systems."
+        }
+      ]
+    },
+    {
+      "name": "Concurrent Programming",
+      "type": "Architecture",
+      "description": "I am very confident in my concurrent programming abilities and my understanding of how concurrent programming is already built into and abstracted in a number of systems such as .NET core.",
+      "synonyms": [
+        "Concurrent Programming",
+        "Multithreading",
+        "Multithreaded Programming"
+      ],
+      "accomplishments": [
+        {
+          "company": "Dematic",
+          "text": "Implemented multithreaded processing, thread-pool handling and resource allocation in warehouse software."
+        }
+      ]
+    },
+    {
+      "name": "Technical Leadership",
+      "type": "Professional",
+      "description": "I consider myself a reliable engineer with a strong history of technical leadership, engineering coordination/delegation, architecture ownership and delivery.",
+      "synonyms": [
+        "Technical leadership",
+        "Leadership",
+        "Tech Lead",
+        "Technical Lead",
+        "Engineering Leadership"
+      ],
+      "accomplishments": [
+        {
+          "company": "Mirai",
+          "text": "Acted as the most senior developer and technical lead, working directly with the CEO."
+        },
+        {
+          "company": "Dematic",
+          "text": "By the second year, wrote tasks, delegated work, led development and assisted with performance documentation."
+        },
+        {
+          "company": "Earth Guardians",
+          "text": "Promoted to technical lead after the first year; by the second year, architected solutions and delegated work to engineers."
+        }
+      ]
+    },
+    {
+      "name": "Mentoring",
+      "type": "Professional",
+      "description": "I am always happy to help out other engineers where required.",
+      "synonyms": [
+        "Mentoring",
+        "Developer Mentoring",
+        "Engineer Mentoring"
+      ],
+      "accomplishments": [
+        {
+          "company": "Mirai",
+          "text": "Provided technical guidance and mentoring to other engineers when required."
+        },
+        {
+          "company": "Dematic",
+          "text": "Mentored and inducted engineers from intern and graduate level through to mid-level."
+        },
+        {
+          "company": "Earth Guardians",
+          "text": "Trained and mentored newer engineers and supported their technical development."
+        }
+      ]
+    },
+    {
+      "name": "CI/CD",
+      "type": "Architecture",
+      "description": "I am a firm believer that developer operations should serve the team and not the other way around. CI/CD should increase productivity and quality of work, removing repetitive components of the work and more.",
+      "synonyms": [
+        "CI",
+        "CI/CD",
+        "CD",
+        "Devops",
+        "Continuous Integration",
+        "Continuous Delivery",
+        "Continuous Deployment"
+      ],
+      "accomplishments": [
+        {
+          "company": "Personal",
+          "text": "This site (www.judebradbury.com)! My CI/CD pipeline deploys changes dynamically when I merge to production! This means as soon as I merge, it checks what services have been changed, whether the frontend has been changed and a few other checks, and only re-deploys the changed services, ensuring 100% uptime for unaffected services during deployments. Please let me know if you have any criticisms!"
+        },
+        {
+          "company": "Earth Guardians",
+          "text": "Built CI/CD pipelines from scratch and maintained deployment workflows for legacy and modern applications."
+        },
+        {
+          "company": "Dematic",
+          "text": "Worked with GitLab-based deployment workflows and enterprise release processes."
+        }
+      ]
+    },
+    {
+      "name": "Git",
+      "type": "Devops",
+      "description": "Git has been my go-to version control software since I became a software engineer and I am very comfortable navigating git, primarily using the shell, as it is quicker for me than GUI versions.",
+      "synonyms": [
+        "Git",
+        "GitHub",
+        "GitLab",
+        "Version Control"
+      ],
+      "accomplishments": [
+        {
+          "company": "Mirai",
+          "text": "Maintained GitHub deployment workflows and worked primarily using git as the version control system."
+        },
+        {
+          "company": "Earth Guardians",
+          "text": "Built and maintained GitHub and GitLab deployment workflows."
+        },
+        {
+          "company": "Dematic",
+          "text": "Worked with GitLab in collaborative enterprise development and deployment workflows."
+        }
+      ]
+    },
+    {
+      "name": "Docker",
+      "type": "Devops",
+      "description": "Containerisation and deployment of software applications using Docker. I have worked with Docker for the entirety of my career. I am comfortable working with Docker.",
+      "synonyms": [
+        "Docker",
+        "Containerisation",
+        "Containers"
+      ],
+      "accomplishments": [
+        {
+          "company": "Mirai",
+          "text": "Used Docker as part of the application and microservice technology stack."
+        },
+        {
+          "company": "Dematic",
+          "text": "At Dematic, I worked on docker to run and deploy test versions of our optimisation systems. This allowed us to simulate customer environments accurately."
+        },
+        {
+          "company": "Earth Guardians",
+          "text": "Used Docker in application deployment and maintenance."
+        }
+      ]
+    },
+    {
+      "name": "Kubernetes",
+      "type": "Devops",
+      "description": "Container orchestration and application deployment using Kubernetes.",
+      "synonyms": [
+        "Kubernetes",
+        "K8s"
+      ],
+      "accomplishments": [
+        {
+          "company": "Mirai",
+          "text": "Worked with Kubernetes deployments and managed application environments through ArgoCD."
+        }
+      ]
+    },
+    {
+      "name": "ArgoCD",
+      "type": "Devops",
+      "description": "GitOps-based Kubernetes application deployment and management. I became familiar with ArgoCD while maintaining a Kubernetes cluster at Mirai.",
+      "synonyms": [
+        "ArgoCD",
+        "Argo CD"
+      ],
+      "accomplishments": [
+        {
+          "company": "Mirai",
+          "text": "Managed Kubernetes application deployments through the ArgoCD interface."
+        }
+      ]
+    },
+    {
+      "name": "AWS",
+      "type": "Cloud",
+      "description": "I am very familiar with AWS and worked across most AWS services while at Mirai and Earth Guardians.",
+      "synonyms": [
+        "AWS",
+        "Amazon Web Services"
+      ],
+      "accomplishments": [
+        {
+          "company": "Mirai",
+          "text": "Worked with AWS as part of the AML/CTF compliance application infrastructure."
+        },
+        {
+          "company": "Earth Guardians",
+          "text": "Worked with AWS services including RDS, Amplify, EC2, CloudFront and S3 to deploy and maintain applications."
+        }
+      ]
+    },
+    {
+      "name": "Azure",
+      "type": "Cloud",
+      "description": "I became familiar with Azure while working at Dematic. I found it to be very similar to AWS, and my skills there were transferrable.",
+      "synonyms": [
+        "Microsoft Azure"
+      ],
+      "accomplishments": [
+        {
+          "company": "Dematic",
+          "text": "Worked with Azure in enterprise software development and deployment environments."
+        }
+      ]
+    },
+    {
+      "name": "Automated Testing",
+      "type": "Architecture",
+      "description": "For the entirety of my career I have developed automated tests.",
+      "synonyms": [
+        "Tests",
+        "Automated Testing",
+        "Test Automation",
+        "Unit Testing"
+      ],
+      "accomplishments": [
+        {
+          "company": "Mirai",
+          "text": "Maintained a high rate of unit-test coverage on their NestJS backend services."
+        },
+        {
+          "company": "Dematic",
+          "text": "Maintained a high rate of unit-test coverage using xUnit and Moq."
+        },
+        {
+          "company": "Earth Guardians",
+          "text": "Developed automated smart-contract tests and achieved complete coverage for the contracts worked on."
+        }
+      ]
+    },
+    {
+      "name": "xUnit",
+      "type": "Testing",
+      "description": "I became familiar with xUnit while at Dematic, and held myself to a high standard of test coverage and qualtiy.",
+      "synonyms": [
+        "xUnit",
+        "xUnit.net"
+      ],
+      "accomplishments": [
+        {
+          "company": "Dematic",
+          "text": "Wrote unit tests using xUnit to support reliable enterprise software."
+        }
+      ]
+    },
+    {
+      "name": "Moq",
+      "type": "Testing",
+      "description": "I became familiar with Moq while at Dematic, and held myself to a high standard of test coverage and qualtiy.",
+      "synonyms": ["Moq"],
+      "accomplishments": [
+        {
+          "company": "Dematic",
+          "text": "Used Moq alongside xUnit for automated unit testing."
+        }
+      ]
+    },
+    {
+      "name": "Jest",
+      "type": "Testing",
+      "description": "I used Jest as a testing library while at Earth Guardians.",
+      "synonyms": ["Jest"],
+      "accomplishments": [
+        {
+          "company": "Earth Guardians",
+          "text": "Used Jest for automated testing of blockchain contracts and application code."
+        }
+      ]
+    },
+    {
+      "name": "AI Integration",
+      "type": "AI",
+      "description": "I have been building AI integrations and working with AI since before ChatGPT was released in 2022 and built an integration / chatbot the day OpenAI released a ChatGPT API.",
+      "synonyms": [
+        "AI",
+        "Artificial Intelligence Integration",
+        "LLM Integration"
+      ],
+      "accomplishments": [
+        {
+          "company": "Mirai",
+          "text": "Integrated Google AI SDK functionality into AML/CTF compliance software and built AI helper chatbots."
+        },
+        {
+          "company": "Mirai",
+          "text": "Designed and managed agentic engineering workflows."
+        },
+        {
+          "company": "Earth Guardians",
+          "text": "Integrated OpenAI's first big ChatGPT model to a helper bot on earthguardians.io. I believe they have changed it since, but when I was working on it, it was very fast, as I used websockets and 2-way token streaming to ensure each block of text arrived at the frontend as the LLM produced it, rather than sending a whole slow message all at once."
+        }
+      ]
+    },
+    {
+      "name": "Google AI SDK",
+      "type": "Backend",
+      "description": "Application integration with Google's AI SDK and generative AI capabilities.",
+      "synonyms": [
+        "AI SDK",
+        "Google Generative AI SDK"
+      ],
+      "accomplishments": [
+        {
+          "company": "Mirai",
+          "text": "Used the Google AI SDK to integrate AI functionality, including helper chatbots, into compliance software."
+        }
+      ]
+    },
+    {
+      "name": "Stripe",
+      "type": "Backend",
+      "description": "I have built a few stripe integrations over my career, the first being while at Earth Guardians.",
+      "synonyms": [
+        "Stripe",
+        "Stripe API",
+        "Stripe Integrations"
+      ],
+      "accomplishments": [
+        {
+          "company": "Earth Guardians",
+          "text": "Built a live stripe integration for a sale event that sold out with no issues."
+        },
+        {
+          "company": "Mirai",
+          "text": "Worked on Stripe integrations within the AML/CTF compliance software platform."
+        }
+      ]
+    },
+    {
+      "name": "Embedded Systems",
+      "type": "Hardware",
+      "description": "I became very familiar with embedded systems while studying at Uni, and worked on a yet-to-be released project at Dematic that involved embedded systems.",
+      "synonyms": [
+        "Embedded Systems",
+        "Embedded Development",
+        "Microcontrollers"
+      ],
+      "accomplishments": [
+        {
+          "company": "Dematic",
+          "text": "Worked on embedded systems using C and C++."
+        }
+      ]
+    },
+    {
+      "name": "PCB Design and Soldering",
+      "type": "Hardware",
+      "description": "Most of my experience here has been academic and with personal projects.",
+      "synonyms": [
+        "PCB Design",
+        "Soldering",
+        "Electronics"
+      ],
+      "accomplishments": []
+    },
+    {
+      "name": "FPGA Programming",
+      "type": "Hardware",
+      "description": "My FPGA experience has been academic.",
+      "synonyms": [
+        "FPGA"
+      ],
+      "accomplishments": []
+    },
+    {
+      "name": "Google Maps API",
+      "type": "Data",
+      "description": "I spent a considerable amount of time while at Earth Guardians creating Google Maps API integrations.",
+      "synonyms": [
+        "Google Maps API",
+        "Google Maps Integration",
+        "Maps API"
+      ],
+      "accomplishments": [
+        {
+          "company": "Earth Guardians",
+          "text": "Built Google Maps integrations and handled large GeoJSON and KML datasets, including optimisation and geospatial processing."
+        },
+        {
+          "company": "Earth Guardians",
+          "text": "Built the original versions of the Google maps integrations on the guardiansofearth.io website over 2021-2024."
+        }
+      ]
+    },
+    {
+      "name": "GeoJSON",
+      "type": "Data",
+      "description": "While at Earth Guardians, I spent a lot of time creating scripts and server integrations that allowed me to process vast amounts of GeoJSON data.",
+      "synonyms": [
+        "GeoJSON",
+        "Satellite",
+        "Geospatial JSON"
+      ],
+      "accomplishments": [
+        {
+          "company": "Earth Guardians",
+          "text": "Handled and optimised large-scale GeoJSON datasets in Google Maps integrations."
+        }
+      ]
+    },
+    {
+      "name": "KML",
+      "type": "Data",
+      "description": "While at Earth Guardians, I spent a lot of time creating scripts and server integrations that allowed me to process vast amounts of KML data. Most of the time converting it to GeoJSON data.",
+      "synonyms": [
+        "KML",
+        "Keyhole Markup Language"
+      ],
+      "accomplishments": [
+        {
+          "company": "Earth Guardians",
+          "text": "Handled and optimised large-scale KML datasets in Google Maps integrations."
+        }
+      ]
+    }
+  ]
+}

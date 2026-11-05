@@ -1,0 +1,59 @@
+{
+    "skills": [
+        {
+            "name": "C#",
+            "type": "Language",
+            "description": "C# development for enterprise applications, APIs, distributed systems and production services.",
+            "synonyms": [
+                "C#",
+                "CSharp"
+            ],
+            "accomplishments": [
+                {
+                    "company": "Dematic",
+                    "text": "Built more than 50% of the Connected Workforce Platform from the ground up using C# and .NET, contributing through its first customer deployment."
+                },
+                {
+                    "company": "Dematic",
+                    "text": "Developed backend APIs, application logic and optimised LINQ queries using Entity Framework Core."
+                },
+                {
+                    "company": "Dematic",
+                    "text": "Implemented multithreaded processing, resource allocation, validation, verification and encryption, including machine-serial verification."
+                },
+                {
+                    "company": "Dematic",
+                    "text": "Maintained high unit-test coverage using xUnit and Moq."
+                }
+            ]
+        },
+        {
+            "name": "C++",
+            "type": "Language",
+            "description": "C++ systems programming, including work involving embedded systems.",
+            "synonyms": [
+                "CPP"
+            ],
+            "accomplishments": [
+                {
+                    "company": "Dematic",
+                    "text": "Worked on embedded systems using C and C++."
+                }
+            ]
+        },
+        {
+            "name": "C",
+            "type": "Language",
+            "description": "Low-level programming and embedded software development.",
+            "synonyms": [
+            "C Programming"
+            ],
+            "accomplishments": [
+            {
+                "company": "Dematic",
+                "text": "Worked on embedded systems and microprocessor-related development using C."
+            }
+            ]
+        }
+    ]
+}

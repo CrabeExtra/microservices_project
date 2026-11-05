@@ -103,34 +103,49 @@ public class SkillRepository(
         await DeleteEntityById(entity.First().Id, ct); // this will only ever delete one or none. Name is a unique field.
     }
 
-    public virtual async Task<PagedData<Skill>> GetSkills(string search, int page, int pageSize, string sortField, bool asc, CancellationToken ct = default)
+    public virtual async Task<PagedData<Skill>> GetSkills(
+        string search,
+        int page,
+        int pageSize,
+        string sortField,
+        bool asc,
+        CancellationToken ct = default)
     {
         var query = db.Skills.AsQueryable();
 
         if (!string.IsNullOrWhiteSpace(search))
         {
-            query = query.Where(skill => skill.Synonyms.Any(s => EF.Functions.Like(s.Name, $"%{search}%")));
+            var hasExactMatch = await db.Skills
+                .AnyAsync(skill => skill.Synonyms
+                    .Any(s => s.Name.ToLower() == search.ToLower()), ct);
+
+            if (hasExactMatch)
+            {
+                query = query.Where(skill => skill.Synonyms
+                    .Any(s => s.Name.ToLower() == search.ToLower()));
+            }
+            else
+            {
+                var pattern = $"%{search}%";
+                query = query.Where(skill => skill.Synonyms
+                    .Any(s => EF.Functions.Like(s.Name, pattern)));
+            }
         }
 
-        if(asc)
-        {
-            query = query.OrderBy(skill => EF.Property<object>(skill, sortField));
-        } else
-        {
-            query = query.OrderByDescending(skill => EF.Property<object>(skill, sortField));
-        }
-        
+        query = asc
+            ? query.OrderBy(skill => EF.Property<object>(skill, sortField))
+            : query.OrderByDescending(skill => EF.Property<object>(skill, sortField));
 
-        var totalCount = await query.CountAsync();
+        var totalCount = await query.CountAsync(ct);
 
         var entities = await query
             .Skip((page - 1) * pageSize)
             .Take(pageSize)
             .Include(skill => skill.SkillToAccomplishments)
-                .ThenInclude(skillToAccomplishment => skillToAccomplishment.SkillAccomplishment)
-            .ToListAsync();
+                .ThenInclude(link => link.SkillAccomplishment)
+            .ToListAsync(ct);
 
-        return new PagedData<Skill> (
+        return new PagedData<Skill>(
             [.. entities.Select(EntityToSkill)],
             totalCount,
             page,

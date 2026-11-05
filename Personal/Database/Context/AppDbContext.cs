@@ -46,8 +46,7 @@ public class AppDbContext : DbContext
 
             entity.Property(u => u.Name)
                 .UseCollation("NOCASE");
-            entity.HasIndex(u => u.Name)
-                .IsUnique(); // tempted to use different type of indexing. But I'm using SQLite and the dataset will always be 'not big data'.
+            entity.HasIndex(u => u.Name);
             entity.HasIndex(u => u.SkillId);
 
             entity

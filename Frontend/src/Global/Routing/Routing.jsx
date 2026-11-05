@@ -24,7 +24,7 @@ export default function Routing() {
                 <Route element={<Navbar />}>
                     <Route path="/" element={<Main />} />
                     <Route path="/experience" element={<Experience />} />
-                    {/* <Route path="/skills" element={<Skills /> } /> */}
+                    <Route path="/skills" element={<Skills /> } />
                     <Route path="/education" element={<Education />} />
                     <Route path="/projects" element={<Projects />} />
                     <Route path="/contact" element={<Contact />} />

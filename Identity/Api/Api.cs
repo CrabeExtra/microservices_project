@@ -3,5 +3,5 @@ using Microsoft.AspNetCore.Mvc;
 namespace Identity.Api;
 
 [ApiController]
-[Route("api/contact/[controller]")]
+[Route("api/identity/[controller]")]
 public abstract class BaseController : ControllerBase;

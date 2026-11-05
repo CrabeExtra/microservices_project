@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Personal.Domain.Entity;
 using System.Security.Cryptography;
 using System.Text;
+using Personal.Api.Dtos;
 
 namespace Personal.Api.Controller;
 
@@ -50,6 +51,32 @@ public class SkillsController(
             return Unauthorized();
 
         await skillsService.AddSkill(request.Data, ct);
+
+        return NoContent();
+    }
+
+    [HttpPost("accomplishment")]
+    public async Task<IActionResult> AddAccomplishment(
+        [FromBody] AdminRequest<AddAccomplishmentDto> request,
+        CancellationToken ct)
+    {
+        if (!IsAdmin(request.Key))
+            return Unauthorized();
+
+        await skillsService.AddAccomplishment(request.Data.Text, request.Data.SkillNames, ct);
+
+        return NoContent();
+    }
+
+    [HttpPost("synonym")]
+    public async Task<IActionResult> AddSynonym(
+        [FromBody] AdminRequest<AddSynonymDto> request,
+        CancellationToken ct)
+    {
+        if (!IsAdmin(request.Key))
+            return Unauthorized();
+
+        await skillsService.AddSynonym(request.Data.Name, request.Data.SkillName, ct);
 
         return NoContent();
     }

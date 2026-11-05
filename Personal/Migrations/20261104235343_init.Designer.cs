@@ -11,7 +11,7 @@ using Personal.Database.Context;
 namespace Personal.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20261104072632_init")]
+    [Migration("20261104235343_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -26,16 +26,11 @@ namespace Personal.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("SkillId")
-                        .HasColumnType("TEXT");
-
                     b.Property<string>("Text")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("SkillId");
 
                     b.ToTable("SkillAccomplishments");
                 });
@@ -51,7 +46,8 @@ namespace Personal.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("TEXT")
+                        .UseCollation("NOCASE");
 
                     b.Property<int>("Type")
                         .HasColumnType("INTEGER");
@@ -74,7 +70,8 @@ namespace Personal.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("TEXT")
+                        .UseCollation("NOCASE");
 
                     b.Property<Guid>("SkillId")
                         .HasColumnType("TEXT");
@@ -89,15 +86,19 @@ namespace Personal.Migrations
                     b.ToTable("SkillSynonyms");
                 });
 
-            modelBuilder.Entity("Personal.Database.Entity.SkillAccomplishmentEntity", b =>
+            modelBuilder.Entity("Personal.Database.Entity.SkillToSkillAccomplishmentEntity", b =>
                 {
-                    b.HasOne("Personal.Database.Entity.SkillEntity", "Skill")
-                        .WithMany("Accomplishments")
-                        .HasForeignKey("SkillId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Property<Guid>("SkillId")
+                        .HasColumnType("TEXT");
 
-                    b.Navigation("Skill");
+                    b.Property<Guid>("SkillAccomplishmentId")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("SkillId", "SkillAccomplishmentId");
+
+                    b.HasIndex("SkillAccomplishmentId");
+
+                    b.ToTable("SkillToSkillAccomplishments");
                 });
 
             modelBuilder.Entity("Personal.Database.Entity.SkillSynonymsEntity", b =>
@@ -111,9 +112,33 @@ namespace Personal.Migrations
                     b.Navigation("Skill");
                 });
 
+            modelBuilder.Entity("Personal.Database.Entity.SkillToSkillAccomplishmentEntity", b =>
+                {
+                    b.HasOne("Personal.Database.Entity.SkillAccomplishmentEntity", "SkillAccomplishment")
+                        .WithMany("SkillsToAccomplishments")
+                        .HasForeignKey("SkillAccomplishmentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Personal.Database.Entity.SkillEntity", "Skill")
+                        .WithMany("SkillToAccomplishments")
+                        .HasForeignKey("SkillId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Skill");
+
+                    b.Navigation("SkillAccomplishment");
+                });
+
+            modelBuilder.Entity("Personal.Database.Entity.SkillAccomplishmentEntity", b =>
+                {
+                    b.Navigation("SkillsToAccomplishments");
+                });
+
             modelBuilder.Entity("Personal.Database.Entity.SkillEntity", b =>
                 {
-                    b.Navigation("Accomplishments");
+                    b.Navigation("SkillToAccomplishments");
 
                     b.Navigation("Synonyms");
                 });

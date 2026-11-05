@@ -9,6 +9,9 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
 
+//env
+DotNetEnv.Env.Load();
+
 var builder = WebApplication.CreateBuilder(args);
 
 // API layer
@@ -53,10 +56,6 @@ var app = builder.Build();
 
 // middlewares
 app.UseMiddleware<ExceptionMiddleware>();
-
-//env
-DotNetEnv.Env.Load();
-
 
 app.UseHttpsRedirection();
 

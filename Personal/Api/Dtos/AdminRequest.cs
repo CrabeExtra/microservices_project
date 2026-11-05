@@ -1,3 +1,5 @@
+namespace Personal.Api.Dtos;
+
 public class AdminRequest<T>
 {
     public required T Data { get; set; }

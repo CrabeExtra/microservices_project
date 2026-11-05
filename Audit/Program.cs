@@ -6,6 +6,9 @@ using Audit.Api.Middleware;
 using Microsoft.EntityFrameworkCore;
 using Audit.Domain;
 
+//env
+DotNetEnv.Env.Load();
+
 var builder = WebApplication.CreateBuilder(args);
 
 // API layer
@@ -36,9 +39,6 @@ builder.Services.AddDomain();
 var app = builder.Build();
 
 app.UseMiddleware<ExceptionMiddleware>();
-
-//env
-DotNetEnv.Env.Load();
 
 app.UseHttpsRedirection();
 

@@ -6,7 +6,13 @@ public enum SkillType
     Backend,
     Architecture,
     Language,
-    Multidisciplinary
+    Devops,
+    Cloud,
+    Testing,
+    Professional,
+    Hardware,
+    Data,
+    AI
 }
 
 public class Skill

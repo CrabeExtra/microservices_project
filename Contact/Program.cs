@@ -5,6 +5,9 @@ using Contact.Messaging;
 using Contact.Api.Middleware;
 using Microsoft.EntityFrameworkCore;
 
+//env
+DotNetEnv.Env.Load();
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddCors(options => options.AddPolicy("AllowSpecificOrigins", policy =>
@@ -46,8 +49,6 @@ var app = builder.Build();
 
 app.UseMiddleware<ExceptionMiddleware>();
 
-//env
-DotNetEnv.Env.Load();
 
 app.UseHttpsRedirection();
 

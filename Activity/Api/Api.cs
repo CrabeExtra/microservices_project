@@ -3,5 +3,5 @@ namespace Activity.Api;
 using Microsoft.AspNetCore.Mvc;
 
 [ApiController]
-[Route("api/contact/[controller]")]
+[Route("api/activity/[controller]")]
 public abstract class BaseController : ControllerBase;

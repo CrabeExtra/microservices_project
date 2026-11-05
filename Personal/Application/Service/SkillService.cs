@@ -18,6 +18,23 @@ public class SkillService(
         await skillRepository.AddSkill(newSkill, ct);
     }
 
+    public async Task AddAccomplishment(string text, List<string> skillNames, CancellationToken ct = default)
+    {
+        ArgumentNullException.ThrowIfNull(text);
+        ArgumentNullException.ThrowIfNull(skillNames);
+        ArgumentOutOfRangeException.ThrowIfZero(skillNames.Count);
+
+        await skillRepository.AddAccomplishment(text, skillNames, ct);
+    }
+
+    public async Task AddSynonym(string name, string skillName, CancellationToken ct = default)
+    {
+        ArgumentNullException.ThrowIfNull(name);
+        ArgumentNullException.ThrowIfNull(skillName);
+
+        await skillRepository.AddSynonym(name, skillName, ct);
+    }
+
     public async Task RemoveSkill(string skillName, CancellationToken ct = default)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(skillName);

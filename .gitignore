@@ -8,3 +8,11 @@ bin/
 
 **/**.env
 .env
+
+# SQLite local data
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal

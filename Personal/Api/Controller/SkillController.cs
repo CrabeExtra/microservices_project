@@ -33,7 +33,7 @@ public class SkillsController(
         [FromQuery] int page = 1,
         [FromQuery] int pageSize = 20,
         [FromQuery] string sortField = "Name",
-        [FromQuery] bool asc = false,
+        [FromQuery] bool asc = true,
         CancellationToken ct = default)
     {
         var result = await skillsService.GetSkills(

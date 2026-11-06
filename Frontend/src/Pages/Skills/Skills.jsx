@@ -27,17 +27,7 @@ const modules = [AllCommunityModule, InfiniteRowModelModule];
 export default function Skills() {
 
     const [searchedSkill, setSearchedSkill] = useState("");
-    const [matchingSkills, setMatchingSkills] = useState([]);
     const [selectedRow, setSelectedRow] = useState(null);
-
-    useEffect(() => {
-        if(searchedSkill && searchedSkill !== "")
-            handleSearch();
-    }, []);
-
-    const handleSearch = async () => {
-
-    }
 
     const onRowClicked = (e) => {
         if (e.data) setSelectedRow(e.data);
@@ -58,12 +48,12 @@ export default function Skills() {
             const sort = params.sortModel[0];
             const pageSize = params.endRow - params.startRow;
             const page = Math.floor(params.startRow / pageSize) + 1;
-
+            
             const query = new URLSearchParams({
                 page: String(page),
                 pageSize: String(pageSize),
                 sortField: colToField(sort?.colId),
-                asc: String(sort?.sort === "asc"),   // backend expects bool
+                asc: String(sort?.sort === "asc" || sort?.sort === undefined),   // backend expects bool
                 search: searchedSkill ?? "",
             });
 

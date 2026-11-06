@@ -19,7 +19,8 @@ public class SkillRepository(
             Name = entity.Name,
             Accomplishments = [.. entity.SkillToAccomplishments
                 .Select(e => e.SkillAccomplishment.Text)],
-            Description = entity.Description
+            Description = entity.Description,
+            Type = entity.Type
         };
     }
 
@@ -30,7 +31,7 @@ public class SkillRepository(
             Id = Guid.NewGuid(),
             Name = skill.Name ?? "",
             Description = skill.Description,
-            Type = (SkillType)skill.Type
+            Type = skill.Type
         };
     }
 

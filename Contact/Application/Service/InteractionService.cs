@@ -25,7 +25,7 @@ public class InteractionService(
         {
             From = sender,
             To = myEmail,
-            Subject = $"New message from: {interactionDto.Email}",
+            Subject = $"New message from: {WebUtility.HtmlEncode(interactionDto.Email)}",
             HtmlBody = $"<p>{WebUtility.HtmlEncode(interactionDto.Body)}</p>",
         }, cancellationToken);
 
@@ -43,7 +43,7 @@ public class InteractionService(
         await resend.EmailSendAsync(new EmailMessage()
         {
             From = sender,
-            To = interactionDto.Email,
+            To = WebUtility.HtmlEncode(interactionDto.Email),
             Subject = "Thank you for contacting me!",
             HtmlBody = """
                 <p>Hi,</p>

@@ -1,4 +1,5 @@
 
+using System.Net;
 using Contact.Application.Dtos;
 using Contact.Application.Service.Interface;
 using DotNetEnv;
@@ -25,7 +26,7 @@ public class InteractionService(
             From = sender,
             To = myEmail,
             Subject = $"New message from: {interactionDto.Email}",
-            HtmlBody = $"<p>{interactionDto.Body}</p>",
+            HtmlBody = $"<p>{WebUtility.HtmlEncode(interactionDto.Body)}</p>",
         }, cancellationToken);
 
         // if unsuccessful, let the user know.

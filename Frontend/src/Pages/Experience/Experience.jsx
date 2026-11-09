@@ -1,23 +1,39 @@
 import { useState } from "react";
-import { Row, Col, Card, Modal } from "react-bootstrap";
+import { Row, Col, Card, Modal, Button } from "react-bootstrap";
+import { ArrowRight } from "react-bootstrap-icons";
 
 import experienceData from "./experience.json";
 import "./Experience.css";
+import { useNavigate } from "react-router-dom";
 
 // I coded this with a lot of assistance from AI to speed it up, as a result, the CSS is not very elegant. I might rebuild it later when I have time.
 // For now I have simply re-written and added styling to make it passable.
 
 export default function Experience() {
+    const navigate = useNavigate();
+
     const [selectedRole, setSelectedRole] = useState(null);
 
     return (
         <Col className="align-items-center container-col">
             <Row className="justify-content-center mt-5">
                 <Col xs={10}>
-                    <h1>My Experience</h1>
+                    <Row className="align-items-center">
+                        <Col className="experience-title-col">
+                            <h1>My Experience</h1>
+                        </Col>
+                        <Col className="experience-title-col justify-content-end mx-5 mt-5">
+                            <Button onClick={() => {
+                                navigate('/skills');
+                            }}>
+                                Skills
+                                <ArrowRight className="mx-1" />
+                            </Button>
+                        </Col>
+                    </Row>
                 </Col>
             </Row>
-
+            
             <Row className="justify-content-center mt-4 card-row">
                 <Col xs={10}>
                     <div className="experience-grid">

@@ -1,6 +1,9 @@
 import { AgGridProvider, AgGridReact } from "ag-grid-react";
 import { AllCommunityModule, themeQuartz, InfiniteRowModelModule  } from "ag-grid-community";
 import { Button, Col, Modal, Row } from "react-bootstrap";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { ArrowRight } from "react-bootstrap-icons";
 
 import { jFetch } from "Global/Libraries";
 
@@ -20,11 +23,11 @@ const terminalTheme = themeQuartz.withParams({
 
 import "./Skills.css";
 
-import { useEffect, useState } from "react";
-
 const modules = [AllCommunityModule, InfiniteRowModelModule];
 
 export default function Skills() {
+
+    const navigate = useNavigate();
 
     const [searchedSkill, setSearchedSkill] = useState("");
     const [selectedRow, setSelectedRow] = useState(null);
@@ -72,9 +75,21 @@ export default function Skills() {
     // NOTE: if I need another AG grid, avoid using multiple providers.
     return (
         <AgGridProvider modules={modules}>
-            <Row className="justify-content-center my-5">
+            <Row className="justify-content-center mt-5">
                 <Col xs={10}>
-                    <h1>Skills</h1>
+                    <Row className="align-items-center">
+                        <Col className="skills-title-col">
+                            <h1>Skills</h1>
+                        </Col>
+                        <Col className="skills-title-col justify-content-end mx-5 mt-5">
+                            <Button onClick={() => {
+                                navigate('/education');
+                            }}>
+                                Education
+                                <ArrowRight className="mx-1" />
+                            </Button>
+                        </Col>
+                    </Row>
                 </Col>
             </Row>
             <Row className="justify-content-center my-5">

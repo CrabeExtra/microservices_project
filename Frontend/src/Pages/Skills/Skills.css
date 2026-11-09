@@ -42,3 +42,8 @@
 .modal-footer {
     background-color: var(--colour-surface);
 }
+
+.skills-title-col {
+    width: fit-content;
+    max-width: fit-content;
+}

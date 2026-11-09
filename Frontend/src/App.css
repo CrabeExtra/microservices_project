@@ -27,6 +27,11 @@
   min-height: fit-content;
 }
 
+.btn:active {
+  background-color: var(--colour-highlight) !important;
+  opacity: 0.5;
+}
+
 .btn:hover {
   background-color: var(--colour-surface);
 }

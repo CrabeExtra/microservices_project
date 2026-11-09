@@ -99,3 +99,8 @@
     font-weight: normal;
     margin-bottom: 0.25rem;
 }
+
+.experience-title-col {
+    width: fit-content;
+    max-width: fit-content;
+}

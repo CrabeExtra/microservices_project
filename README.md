@@ -1,3 +1,3 @@
-# WORK IN PROGRESS
+# My Personal Website
 
-I will write a proper readme for this repository once I have completed the core logic.
+I still have to write this up.

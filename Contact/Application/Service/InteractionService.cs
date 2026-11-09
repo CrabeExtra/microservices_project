@@ -38,25 +38,6 @@ public class InteractionService(
             };
         }
 
-        // send a confirmation that I have received the message.
-
-        await resend.EmailSendAsync(new EmailMessage()
-        {
-            From = sender,
-            To = WebUtility.HtmlEncode(interactionDto.Email),
-            Subject = "Thank you for contacting me!",
-            HtmlBody = """
-                <p>Hi,</p>
-                </br></br>
-                <p>This is an automated message to thank you for contacting me. 
-                I will review your message and get back to you shortly!</p>
-                </br></br>
-                <p>Kind regards,</p>
-                </br></br>
-                <p>Jude</p>
-            """ 
-        }, cancellationToken);
-
         return new InteractionResponseDto
         {
             Success = true

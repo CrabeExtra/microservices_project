@@ -8,7 +8,6 @@ using Resend;
 namespace Contact.Application.Service;
 
 public class InteractionService(
-    IApiService apiService
 ) : IInteractionService
 {
     public async Task<InteractionResponseDto> HandleInteraction(InteractionDto interactionDto, CancellationToken cancellationToken)

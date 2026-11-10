@@ -15,8 +15,8 @@ public class AppDbContext : DbContext
     public DbSet<SkillEntity> Skills { get; set; }
     public DbSet<SkillToSkillAccomplishmentEntity> SkillToSkillAccomplishments { get; set; }
     public DbSet<SkillAccomplishmentEntity> SkillAccomplishments { get; set; }
-
     public DbSet<SkillSynonymsEntity> SkillSynonyms { get; set; }
+    public DbSet<ProjectEntity> Projects { get; set; }
 
     // Constraints
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -71,6 +71,17 @@ public class AppDbContext : DbContext
                 .WithMany(u => u.SkillsToAccomplishments)
                 .HasForeignKey(u => u.SkillAccomplishmentId);
 
+        });
+
+        modelBuilder.Entity<ProjectEntity>(entity =>
+        {
+            entity.HasKey(u => u.Id);
+
+            entity.HasIndex(u => u.Name)
+                .IsUnique();
+
+            entity.HasIndex(u => u.GitName)
+                .IsUnique();
         });
 
     }

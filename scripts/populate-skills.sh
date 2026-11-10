@@ -3,7 +3,7 @@ set -Eeuo pipefail
 
 API_ROOT="${PERSONAL_SKILLS_API_ROOT:-http://localhost:5004/api/personal/skills}"
 ADMIN_KEY="${PERSONAL_API_ADMIN_KEY:?Set PERSONAL_API_ADMIN_KEY before running this script}"
-JSON_FILE="${1:-"$(dirname -- "${BASH_SOURCE[0]}")/skills_prod.json"}"
+JSON_FILE="${1:-"$(dirname -- "${BASH_SOURCE[0]}")/new_skills.json"}"
 
 command -v jq >/dev/null 2>&1 || {
     echo "Error: jq is required. Install it with: sudo pacman -S jq" >&2

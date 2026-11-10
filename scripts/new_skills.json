@@ -1,0 +1,62 @@
+{
+  "skills": [
+        {
+            "name": "Mathematics",
+            "type": "Professional",
+            "description": "While at UTAS I studied maths into third year maths courses, primarily obtaining HDs. This involved topics such as Fourier and Laplace transforms, topology, diff/integral calculus, and other applied engineering mathematics including what was required for circuit analysis, signals and linear systems, kinematics (dynamics, statics).",
+            "synonyms": [
+                "Maths",
+                "Mathematics",
+                "Engineering"
+            ],
+            "accomplishments": [
+            ]
+        },
+        {
+            "name": "Circuit theory and analysis",
+            "type": "Professional",
+            "description": "While at UTAS, I studied and achieved high grades in circuit theory. This involved mathematically analysing AC and DC circuits and electrical systems.",
+            "synonyms": [
+                "Engineering",
+                "Electrical",
+                "Electronic",
+                "Circuit theory and analysis"
+            ],
+            "accomplishments": [
+            ]
+        },
+        {
+            "name": "Control systems",
+            "type": "Professional",
+            "description": "At UTAS, I studied control and process control systems and all associated mathematics. This involved a lot of maths and gaining a thorough understanding of all of the theory and practice behind control systems such as PIDs.",
+            "synonyms": [
+                "Engineering",
+                "Control systems"
+            ],
+            "accomplishments": [
+            ]
+        },
+        {
+            "name": "Computer and data networks.",
+            "type": "Professional",
+            "description": "I studied data networks at UTAS. This involved topics such as designing and implementing complex data networks and IoT systems.",
+            "synonyms": [
+                "Engineering",
+                "Computer and data networks"
+            ],
+            "accomplishments": [
+            ]
+        },
+        {
+            "name": "Digital electronics",
+            "type": "Professional",
+            "description": "At UTAS I studied digital electronics. During this time I was required to design and build circuits such as adders and processors using boolean logic gates as well as more abstracted components such as diodes, transistors, flip-flops and registers.",
+            "synonyms": [
+                "Engineering",
+                "Digital electronics"
+            ],
+            "accomplishments": [
+            ]
+        }
+    ]
+}

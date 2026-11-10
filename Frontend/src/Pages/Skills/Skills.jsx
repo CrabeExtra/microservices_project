@@ -1,29 +1,13 @@
-import { AgGridProvider, AgGridReact } from "ag-grid-react";
-import { AllCommunityModule, themeQuartz, InfiniteRowModelModule  } from "ag-grid-community";
+
 import { Button, Col, Modal, Row } from "react-bootstrap";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ArrowRight } from "react-bootstrap-icons";
+import { AgGridReact } from "ag-grid-react";
 
-import { jFetch } from "Global/Libraries";
-
-// TODO: this is kind of messy, I should redo this as CSS.
-const terminalTheme = themeQuartz.withParams({
-    backgroundColor: "#000000",
-    foregroundColor: "#00FF41",
-    headerBackgroundColor: "#222222",
-    headerTextColor: "#F2F0EA",
-    borderColor: "#333333",
-    accentColor: "#00FF41",
-    fontFamily: "VT323",
-    fontSize: 18,
-    spacing: 6,
-    rowHoverColor: "#111111",
-});
+import { jFetch, terminalTheme } from "Global/Libraries";
 
 import "./Skills.css";
-
-const modules = [AllCommunityModule, InfiniteRowModelModule];
 
 export default function Skills() {
 
@@ -74,7 +58,7 @@ export default function Skills() {
 
     // NOTE: if I need another AG grid, avoid using multiple providers.
     return (
-        <AgGridProvider modules={modules}>
+        <div>
             <Row className="justify-content-center mt-5">
                 <Col xs={10}>
                     <Row className="align-items-center">
@@ -149,6 +133,6 @@ export default function Skills() {
                     </Button>
                 </Modal.Footer>
             </Modal>
-        </AgGridProvider>
+        </div>
     )
 }
